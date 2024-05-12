@@ -1,0 +1,86 @@
+.banner {
+    height: 260px; 
+    width: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    right: 0;  
+    background-image: url(Assets/Taylix.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    
+}
+.banner header{
+    position: fixed;
+    bottom: 80%;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+
+}
+.icon {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 45%;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 45px;
+    color: #625548;
+}
+.icon img{
+    width: 100px;
+    height: auto;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #cac2b5;
+    position: relative;
+}
+
+
+
+
+.Contenedor {
+    width: 420px;
+    color: #625548;
+    border: 2px solid #625548;
+    border-radius: 20px;
+    padding: 2%;
+}
+.Contenedor h1{
+    font-size: 36px; 
+    text-align: center;
+    
+
+}
+.Contenedor .caja{
+    width: 100%;
+    height: 50%;
+    margin: 20px 0;
+    
+
+}
+.boton{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding: 8px;
+    border-radius: 20px;
+    width: 150px;
+    background-color: #625548;
+    color: #cac2b5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
