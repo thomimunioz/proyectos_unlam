@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+
+header{
+    display: flex;
+    width: 100%;
+    height: 12%;
+    background-color: rgba(207, 201, 190);
+    position: fixed;
+    top:0;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.icon{
+    display: flex;
+    margin-left: 30px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 30px;
+    color: #625548;
+    text-decoration: none;
+}
+
+
+
+.navegacion a{
+    position: relative;
+    text-decoration: none;
+    font-family: "Bebas Neue";
+    font-size: 20px;
+    color: #625548;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: 600;
+}
+.navegacion a::before{
+    content: '';
+    position: absolute;
+    top:100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #625548;
+    transition: .3s;
+
+}
+
+.navegacion a:hover::before{
+    width: 100%;
+}
+    
+    
+
+body{
+    background-image: url(../Assets/loginBack.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position:relative;
+
+}
+.contenedor{
+    display:grid;
+    grid-template-columns: 40% 60%;
+    width: 100%;
+    margin-top: 7%;
+    padding:3%;
+    
+
+}
+
+.reproductorTeaser{
+    width:500px;
+    height:300px; 
+    
+}
+
+.reproductorTeaser button{
+    width:100%;
+    height: 12%;
+}
+
+
+.reproducir{
+    border-radius: 100px;
+    background-color: #cfc4be;
+    border-color: #625548;
+    font-size: 90%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-content: center;
+}
+
+.informacionEra{
+    display: flex;
+    flex-direction: column;
+    background-color: #836d57;
+    row-gap: 5%;
+
+}
+
+.titulo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.informacionEra h3{
+    font-family: 'Libre Baskerville';
+    font-size: 1.3em;
+}
+
+.informacionEra h4{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    margin-top: 0.3em;
+    font-weight: normal;
+    
+}
+
+.genero{
+    display:flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap:0.5%;
+}
+
+.productores{
+    display:flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap:0.5%;
+}
+
+.abajo{
+    display:flex;
+    flex-direction: column;
+    margin-top: 2%;
+
+}
+
+
+.paddingabajo{
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.otros{
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    margin-left: 3%;
+    
+}
+.otrasEras{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2%;
+
+}
+
+.otrasEras img{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 10%;
+
+}
