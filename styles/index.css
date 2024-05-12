@@ -8,7 +8,7 @@ body {
     height: 100vh;
     padding: 0%;
     margin: 0;
-    background-image: url(../Assets/index\ background.jpg);
+    background-image: url(../Assets/index/index\ background.jpg);
     background-size:cover;
     background-position:center;
     background-repeat: no-repeat;
@@ -99,7 +99,7 @@ gap: 20px;
     @media  screen and (max-width: 600px) {
 
         body{
-            background-image: url(../Assets/indexMobileBack.jpg);
+            background-image: url(../Assets/index/indexMobileBack.jpg);
             background-size:cover;
             background-position:center;
             background-repeat: no-repeat;
@@ -170,7 +170,7 @@ gap: 20px;
     @media  screen and (max-width:1024px) and (min-width:600px){
         
         body{
-            background-image: url(../Assets/indexTabletBack.jpg);
+            background-image: url(../Assets/index/indexTabletBack.jpg);
             background-size:cover;
             background-position:center;
             background-repeat: no-repeat;
