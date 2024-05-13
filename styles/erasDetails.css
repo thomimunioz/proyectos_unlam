@@ -108,6 +108,7 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 .informacionEra h3{
@@ -123,6 +124,44 @@ body{
     
 }
 
+.cancion{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    
+}
+.cancion label{
+    font-family: 'Libre Baskerville';
+    font-size: 85%;
+    
+    
+}
+
+.coso1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.coso2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content:center;
+    flex-wrap: wrap;
+}
+
+select{
+    background-color:#cfc4be;
+    border-radius: 30px;
+    font-family: 'Libre Baskervile';
+    color: #625548;
+}
+#tiporeproduccion option{
+    text-align: center;
+}
 .genero{
     display:flex;
     flex-direction: row;

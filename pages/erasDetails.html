@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VistaExpandida</title>
-    <link rel="stylesheet" href="../Styles/seriesDetails.css">
+    <title>Eras Detail </title>
+    <link rel="stylesheet" href="../Styles/erasDetails.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -39,12 +39,16 @@
             <h4>The Tortured Poets Department</h4>
         </article>
         <article class="cancion">
-            <label for="opciones">Selecciona un tipo de reproduccion:</label>
-            <select id="tiporeproduccion" name="opciones">
-                <option value="opcion1">MV</option>
-                <option value="opcion2">LyricVideo</option>
-            </select>  
-            <label for="canciones">Selecciona la canción:</label>
+            <div class="coso1">
+                <label for="opciones">Formato:</label>
+                <select id="tiporeproduccion" name="opciones">
+                    <option value="opcion1">MV</option>
+                    <option value="opcion2">LyricVideo</option>
+                </select>
+            </div>
+            
+            <div class="coso2">
+            <label for="canciones">Cancion:</label>
             <select id="cancion" name="opciones">
                   <option value="opcion1">Fortnight ft. Post Malone</option>
                   <option value="opcion2">The Tortured Poets Department</option>
@@ -63,7 +67,7 @@
                   <option value="opcion15">The Alchemy</option>
                   <option value="opcion16">Clara Bow</option>
             </select>
-           
+            </div>
         </article>
         <article class="genero">
             <h3>Genero:</h3>
