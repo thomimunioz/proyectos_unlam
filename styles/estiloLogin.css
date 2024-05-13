@@ -8,10 +8,9 @@
     top: 0; 
     left: 0; 
     right: 0;  
-    background-image: url(Assets/Taylix.jpeg);
+    background-image: url(../Assets/Login/index\ background.jpg);
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     background-repeat: no-repeat;
     
     
@@ -26,20 +25,13 @@
     
 
 }
-.icon {
-    display: flex;
-    margin-top: 10px;
-    margin-left: 45%;
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 45px;
-    color: #625548;
-}
 .icon img{
-    width: 100px;
+    width: 250px;
     height: auto;
-    margin-left: 30px;
+    margin-left: 835px;
     margin-top: 10px;
 }
+
 
 
 body {
