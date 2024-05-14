@@ -70,30 +70,27 @@ align-items:start;
 justify-content: center;
 gap: 20px;
 
-    } 
-
-    .registrar{
-        width: 150px;
-        font-size: 15px;
-        font-family: "Inter", sans-serif;
-        color: #e4e0d9;
-        padding: 10px;
-        border-radius: 100px;
-        background-color: #847a6b;
-        border-color: #625548;
-
-    }
-    .login{
-        width: 150px;
-        font-size: 15px;
-        font-family: "Inter", sans-serif;
-        color: #625548;
-        padding: 10px;
-        border-radius: 100px;
-        background-color: #cac2b5;
-        border-color: #746b5c;
 
     } 
+
+
+button{
+    width: 150px;
+    font-size: 15px;
+    font-family: "Inter", sans-serif;
+    color: #625548;
+    padding: 10px;
+    border-radius: 100px;
+    background-color: #cac2b5;
+    border-color: #746b5c;
+
+}
+
+.botones button:hover{
+    background-color: #625548;
+    color: #cac2b5;
+
+}
 
 
     @media  screen and (max-width: 600px) {
