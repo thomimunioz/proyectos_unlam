@@ -1,0 +1,469 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  @font-face {
+    font-family: "Big Caslon Regular";
+    src: url(../Assets/home/fonts/BigCaslonFB-Regular.ttf);
+  }
+  
+  @font-face {
+    font-family: "Big Caslon Bold";
+    src: url(../Assets/home/fonts/BigCaslonFB-Bold.ttf);
+  }
+  
+  @font-face{
+    font-family: "Big Caslon Black";
+    src: url(../Assets/home/fonts/BigCaslonFB-Bold.ttf);
+  }
+  
+  body {
+    background-color: #cfc9be;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /**HEADER**/
+  
+  .main-background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .encabezadoPagina {
+    position: absolute;
+    padding: 20px;
+    width: 100%;
+    top: 0;
+    background-image: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo {
+    width: 130px;
+    height: 85px;
+    margin-left: 20px;
+  }
+  
+  .fondo-buscador {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: 0.5s ease-in-out;
+    color: #cfc9be;
+  }
+  
+  .fondo-buscador:hover {
+    width: 300px;
+    border-style: solid;
+    border-color: #cfc9be;
+  }
+  
+  input {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    font-family: "Big Caslon Black";
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #cfc9be;
+  }
+  
+  .mainPagina .fondo-buscador i {
+    font-size: 20px;
+    cursor: pointer;
+    color: #cfc9be;
+  }
+  
+  .menuPrincipal {
+    display: flex;
+    width: fit-content;
+    position: absolute;
+    right: 0;
+  }
+  
+  .menuPrincipal-contenedor {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    padding: 0;
+    color: #cfc9be;
+  }
+  
+  .opcionMenu {
+    font-family: "Big Caslon Black";
+    color: #cfc9be;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 40px;
+  }
+  
+  .menuPrincipal ul a:hover {
+    color: rgb(205, 201, 198, 0.8);
+    font-weight: 500;
+  }
+  
+  .menu-vertical {
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 125px;
+    background-color: rgb(98, 85, 72, 0.5);
+    margin-left: 38px;
+    margin-top: 10px;
+  }
+  
+  .menuPrincipal-contenedor li:hover .menu-vertical {
+    display: block;
+  }
+  
+  .menu-vertical li:hover {
+    background-color: #3c2c1a;
+  }
+  
+  .menu-vertical li a {
+    display: block;
+    color: #cfc9be;
+    padding: 15px 15px 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Big Caslon Black";
+    font-size: 15px;
+  }
+  
+  .taylor-navbar {
+    width: 100%;
+  }
+  
+  .newalbum-info {
+    position: absolute;
+    bottom: 50%;
+    width: 1200px;
+    text-align: center;
+  }
+  
+  .newalbum-info p {
+    font-family: "Big Caslon Black";
+    color: #cfc9be;
+    font-size: 45px;
+  }
+  
+  .newalbum-info p span {
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+  }
+  
+  .newalbum-info button {
+    padding: 10px 50px;
+    border: none;
+    outline: none;
+    background: #cfc9be;
+    color: #625548;
+    font-family: "Cutive", serif;
+    font-size: 20px;
+    border-radius: 30px;
+    margin-top: 15px;
+  }
+  
+  .newalbum-info button:hover {
+    background: #625548;
+    color: #cfc9be;
+  }
+  
+  .mainPagina {
+    background-color: #cfc9be;
+  }
+  
+  .seccionPrincipal {
+    background-color: #cfc9be;
+    margin-bottom: 40px;
+  }
+  
+  .select-container{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 25px;
+    align-items: center;
+  }
+  
+  .select-box{
+    border: none;
+    appearance: none;
+    padding: 0 30px 0 15px; /*revisar si hace falta*/
+    width: 300px;
+    height: 30px;
+    color: #cfc9be;
+    background-color: #625548;
+    font-size: 18px;
+    font-family: 'Big Caslon Black';
+    border-radius: 10px;
+  }
+  
+  .select-box option:hover{
+    color: #625548;
+    background-color: #cfc9be;
+  }
+  
+  .seccionPrincipal-Titulos {
+    margin-left: 25px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    font-family: "Big Caslon Black";
+    font-size: 30px;
+    width: fit-content;
+  }
+  
+  .seccionPrincipal-Eras-Tapas {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 25px;
+    margin-right: 25px;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1);
+    transition: 1s;
+  }
+  
+  .imgEras {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+  }
+  
+  .imgEras:hover {
+    transform: scale(1.1);
+    z-index: 2;
+  }
+  
+  .verMasEras {
+    width: 300px;
+    height: 300px;
+    display: block;
+    font-family: "Big Caslon Black";
+    font-size: 25px;
+    color: #cfc9be;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .verMasLetra {
+    color: #625548;
+  }
+  
+  .seccionPrincipal .seccionPrincipal-Eras-Tapas button i {
+    font-size: 1.2em;
+    color: #625548;
+  }
+  
+  .seccionPrincipal-Peliculas-Tapas {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 25px;
+    margin-right: 25px;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1);
+    transition: 1s;
+  }
+  
+  .imgPeliculas {
+    width: 360px;
+    height: 180px;
+    border-radius: 5px;
+  }
+  
+  .imgPeliculas:hover {
+    transform: scale(1.1);
+    z-index: 2;
+  }
+  
+  .verMasPeliculas {
+    width: 360px;
+    height: 180px;
+    display: block;
+    font-family: "Big Caslon Black";
+    font-size: 25px;
+    color: #cfc9be;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .seccionPrincipal .seccionPrincipal-Peliculas-Tapas button i {
+    font-size: 1.2em;
+    color: #625548;
+  }
+  
+  .seccionPrincipal-Entrevistas-Tapas {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 25px;
+    margin-right: 25px;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1);
+    transition: 1s;
+  }
+  
+  .imgEntrevistas {
+    width: 360px;
+    height: 180px;
+    border-radius: 5px;
+  }
+  
+  .imgEntrevistas:hover {
+    transform: scale(1.1);
+    z-index: 2;
+  }
+  
+  .verMasEntrevistas {
+    width: 360px;
+    height: 180px;
+    display: block;
+    font-family: "Big Caslon Black";
+    font-size: 25px;
+    color: #cfc9be;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .seccionPrincipal .seccionPrincipal-Entrevistas-Tapas button i {
+    font-size: 1.2em;
+    color: #625548;
+  }
+  
+  .footerPagina{
+    background-color: #625548;
+  }
+  
+  .footerContainer{
+    width: 100%;
+    padding: 70px 30px 20px;
+  
+  }
+  
+  .socialIcons{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .socialIcons a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: #cfc9be;
+    margin: 10px;
+    border-radius: 50%;
+  }
+  
+  .socialIcons a i{
+    font-size: 2em;
+    color: #625548;
+    opacity: 0.9;
+  }
+  
+  .socialIcons a:hover{
+    background-color: #3c2c1a;
+    transition: 0.3s;
+  }
+  
+  .socialIcons a:hover i{
+    color: #ffffff;
+  }
+  
+  .footer-mid{
+    margin: 30px 0;
+  }
+  
+  .footer-mid ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+  
+  .footer-mid ul li a{
+    display: flex;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+    font-family: 'Big Caslon Black';
+    color: #cfc9be;
+  }
+  
+  .footer-mid ul li a:hover{
+    opacity: 1;
+  }
+  
+  .footer-bottom{
+    background-color: #3c2c1a;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-bottom p{
+    color: #cfc9be;
+  }
+  
+  
+  @media (max-width: 390px){
+    .seccionPrincipal--Titulos {
+      font-size: 15px;
+    }
+  
+    .encabezadoPagina {
+      position: absolute;
+      padding: 20px;
+      width: 100%;
+      top: 0;
+      background-image: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0));
+      display: block;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .menuPrincipal {
+      display: flex;
+      width: fit-content;
+      position: absolute;
+      right: 0;
+    }
+    
+    .menuPrincipal-contenedor {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+      padding: 0;
+      color: #cfc9be;
+    }
+    
+    .opcionMenu {
+      font-size: 15px;
+      padding: 5px;
+    }
+  
+    .seccionPrincipal--Eras--Tapas {
+      display: block;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  
+    .imgEras {
+      width: 150px;
+      height: 150px;
+    }
+  
+  }
