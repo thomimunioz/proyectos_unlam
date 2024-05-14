@@ -98,10 +98,12 @@ header {
 }
 .inputDos input{
     margin-top: 5px;
+    border-radius: 20px;
 }
 
 .inputTres input{
     width: 50px;
+    border-radius: 20px;
     margin-top: 5px;
 }
 
@@ -159,4 +161,126 @@ header {
     
     margin-top: 5px;
     color: #625548;
+}
+
+@media  screen and (max-width: 600px)  {
+
+    body{
+        background-image: url(../Assets/index/indexMobileBack.jpg);
+        background-size:cover;
+        background-position:center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+     }
+
+     .icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+     .register-box{
+        width: 100%;
+        justify-items: center;
+        height: 220px;
+     }
+
+     .columnaUno{
+        font-size: 20px;
+        height: 10px;            
+        
+            }
+        
+    .columnaDos{
+        font-size: 20px;
+        height: 10px;   
+            }
+        
+     .botones{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        height:fit-content;
+        margin-top: 30px;
+      
+     }
+
+     
+.confirmar{
+    width: 170px;
+    font-size: 15px;
+
+}
+.cancelar{
+    width: 170px;
+    font-size: 15px;
+
+} 
+}
+
+@media  screen and (max-width:1024px) and (min-width:600px){
+    
+    body{
+        background-image: url(../Assets/index/indexTabletBack.jpg);
+        background-size:cover;
+        background-position:center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+     }
+
+     .icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+     .register-box{
+        width: 65%;
+        justify-items: end;
+        height: 380px;
+     }
+
+     .columnaUno{
+        font-size: 25px;
+        height: 15px;            
+        
+            }
+                
+        
+     .botones{
+        justify-content: flex-start;
+        
+    }
+
+     
+.confirmar{
+    width: 90px;
+    font-size: 15px;
+
+}
+.cancelar{
+    width: 90px;
+    font-size: 15px;
+
+}
+.columnaDos{
+    font-size: 20px;
+    height: 20px;
+    margin-top: 15px;           
+    
+        }   
+
+.pago{
+font-size: 15px;
+margin-top: 10px;
+}
+.inputDos{
+    margin-top: 5px;
+}
+.inputTres{
+    margin-top: 5px;
+}
 }
