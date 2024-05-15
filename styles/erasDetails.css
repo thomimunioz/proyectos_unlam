@@ -17,13 +17,11 @@ header{
     z-index: 100;
 }
 
-.icon{
-    display: flex;
+.contenedorHeader img{
+    width: 100px;
+    height: auto;
     margin-left: 30px;
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 30px;
-    color: #625548;
-    text-decoration: none;
+    margin-top: 10px;
 }
 
 .navegacion a{
@@ -244,6 +242,12 @@ select{
     margin-top: 2.5%;
     margin-bottom: 2.5%;
     margin-left: 3%;
+    h2{
+        font-family:'Times New Roman', Times, serif;
+        font-size: 2em;
+        color:#625548;
+        
+    }
 }
 .otrasEras{
     width: 100%;
