@@ -450,10 +450,12 @@
     .menuPrincipal-contenedor{
       overflow: auto;
       box-sizing: border-box;
+      justify-content: center;
+      margin-right: 5px;
     }
     
     .opcionMenu {
-      font-size: 17px;
+      font-size: 15px;
       padding: 5px;
     }
 

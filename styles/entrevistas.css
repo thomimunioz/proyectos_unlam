@@ -93,6 +93,79 @@ header{
 
 }
 
+.footerPagina{
+    background-color: #625548;
+  }
+  
+  .footerContainer{
+    width: 100%;
+    padding: 70px 30px 20px;
+  
+  }
+  
+  .socialIcons{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .socialIcons a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: #cfc9be;
+    margin: 10px;
+    border-radius: 50%;
+  }
+  
+  .socialIcons a i{
+    font-size: 2em;
+    color: #625548;
+    opacity: 0.9;
+  }
+  
+  .socialIcons a:hover{
+    background-color: #3c2c1a;
+    transition: 0.3s;
+  }
+  
+  .socialIcons a:hover i{
+    color: #ffffff;
+  }
+  
+  .footer-mid{
+    margin: 30px 0;
+  }
+  
+  .footer-mid ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+  
+  .footer-mid ul li a{
+    display: flex;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.5em;
+    opacity: 0.7;
+    transition: 0.5s;
+    font-family: 'Big Caslon Black';
+    color: #cfc9be;
+  }
+  
+  .footer-mid ul li a:hover{
+    opacity: 1;
+  }
+  
+  .footer-bottom{
+    background-color: #3c2c1a;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-bottom p{
+    color: #cfc9be;
+  }
+
 
 @media  screen and (max-width: 600px){
     
@@ -117,6 +190,30 @@ header{
     .entrevistas{
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .padding{
+        margin-bottom: 50px;
+    }
+
+    .footer-mid ul{
+        display: flex;
+        grid-template-columns: 1fr 1fr;
+        margin-right: 20px;
+        margin-left: 20px;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+      }
+  
+      .footer-mid ul li a{
+        margin-right: 25px;
+        margin-left: 25px;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+        font-size: 1.2em;
+      }
+
 }
 
 @media  screen and (max-width:1024px) and (min-width:600px){

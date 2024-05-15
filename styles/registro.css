@@ -10,14 +10,10 @@ body{
 
 }
 
-header {
-    display: flex;
-    align-items: center;
-    height: 100px;
-    margin-left: 30px;
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 30px;
-    color: #625548;
+header a img{
+    width: 130px;
+    height: 85px;
+    margin-left: 20px;
 }
 
 
