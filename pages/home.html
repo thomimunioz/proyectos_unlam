@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:wght@700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/96e2ff5d4b.js" crossorigin="anonymous"></script>
+    <title>Taylix - Home</title>
+</head>
+<body>
+    
+    <!--HEADER INICIO-->
+    <div class="main-background">
+        <header class="encabezadoPagina">
+            <div class="logo-container">
+                <a href="home.html"><img class="logo" src="../Assets/home/taylix_icon.png" alt=""></a>
+                <div class="fondo-buscador">
+                    <input type="text" placeholder="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <nav class="menuPrincipal">
+                <ul class="menuPrincipal-contenedor">
+                    <li><a href="home.html" class="opcionMenu">Inicio</a></li>
+                    <li><a href="erasDetails.html" class="opcionMenu">Eras</a></li>
+                    <li><a href="moviesDetails.html" class="opcionMenu">Peliculas</a></li>
+                    <li><a href="entrevistasDetails.html" class="opcionMenu">Entrevistas</a></li>
+                    <li>
+                        <a href="#" class="opcionMenu">Mi Cuenta</a>
+                        <ul class="menu-vertical">
+                            <li><a href="profile.html">Perfil</a></li>
+                            <li><a href="../index.html">Cerrar sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <img class="taylor-navbar" src="../Assets/home/taylor_background.jpg" alt="" width="100%">
+        <div class="newalbum-info">
+            <p>THE TORTURED POETS DEPARTMENT</p>
+            <p>All is fair in <span>love</span> and <span>poetry</span></p>
+            <a href="erasDetails.html">
+                <button>Más Info.</button>
+            </a>
+        </div>
+    </div>
+    <!--HEADER FIN-->
+
+    <!--MAIN INICIO-->
+        <main class="mainPagina">
+            <section class="seccionPrincipal">
+                <div class="select-container">
+                    <a href="erasDetails.html"><h2 class="seccionPrincipal-Titulos">Eras</h2></a>
+                    <select class="select-box" name="selectbox" id="">
+                        <option class="select-box-opcion" value="seleccionar">Seleccione una opción</option>
+                        <option class="select-box-opcion" value="eras">Eras</option>
+                        <option class="select-box-opcion" value="peliculas">Películas</option>
+                        <option class="select-box-opcion" value="entrevistas">Entrevistas</option>
+                    </select>
+                </div>
+                <div class="seccionPrincipal-Eras-Tapas">
+                    <img class="imgEras" src="../Assets/home/eras/ttpd_portada.jpg" alt="">
+                    <img class="imgEras" src="../Assets/home/eras/midnights_portada.jpg" alt="">
+                    <img class="imgEras" src="../Assets/home/eras/evermore_portada.jpg" alt="">
+                    <img class="imgEras" src="../Assets/home/eras/folklore_portada.jpg" alt="">
+                    <img class="imgEras" src="../Assets/home/eras/lover_portada.jpg" alt="">
+                    <a href="erasDetails.html"><button class="verMasEras"><i class="fa-solid fa-plus"></i><br><span class="verMasLetra">Ver más</span></button></a>
+                </div>
+                <a href="moviesDetails.html"><h2 class="seccionPrincipal-Titulos">Películas</h2></a>
+                 <div class="seccionPrincipal-Peliculas-Tapas">
+                    <img class="imgPeliculas" src="../Assets/home/peliculas/erastour_portada.jpg" alt="">
+                    <img class="imgPeliculas" src="../Assets/home/peliculas/amsterdam_portada.jpg" alt="">
+                    <img class="imgPeliculas" src="../Assets/home/peliculas/alltoowell_portada.jpg" alt="">
+                    <img class="imgPeliculas" src="../Assets/home/peliculas/folklorestudiosessions_portada.jpg" alt="">
+                    <a href="moviesDetails.html"><button class="verMasPeliculas"><i class="fa-solid fa-plus"></i><br><span class="verMasLetra">Ver más</span></button></a>
+                </div>
+                <a href="entrevistasDetails.html"><h2 class="seccionPrincipal-Titulos">Entrevistas</h2></a>
+                <div class="seccionPrincipal-Entrevistas-Tapas">
+                    <img class="imgEntrevistas" src="../Assets/home/entrevistas/directorsondirectors_entrevista.jpg" alt="">
+                    <img class="imgEntrevistas" src="../Assets/home/entrevistas/ellen_entrevista.jpg" alt="">
+                    <img class="imgEntrevistas" src="../Assets/home/entrevistas/sundaymorning_entrevista.jpg" alt="">
+                    <img class="imgEntrevistas" src="../Assets/home/entrevistas/tonightshow_entrevista.jpg" alt="">
+                    <a href="entrevistasDetails.html"><button class="verMasEntrevistas"><i class="fa-solid fa-plus"></i><br><span class="verMasLetra">Ver más</span></button></a>
+                </div>
+            </section>
+        </main>
+    <!--MAIN FIN-->
+            
+    <!--FOOTER INICIO-->
+    <footer class="footerPagina">
+        <section class="footerContainer">
+            <div class="socialIcons">
+                <a href="https://www.facebook.com/TaylorSwift/?locale=es_LA" target="_blank"> <i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/taylorswift/" target="_blank"> <i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com/taylorswift13" target="_blank"> <i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.youtube.com/@TaylorSwift" target="_blank"> <i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@taylorswift" target="_blank"> <i class="fa-brands fa-tiktok"></i></a>
+            </div>
+            <nav class="footer-mid">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone=541154753010" target="_blank">Contacto</a></li>
+                </ul>
+            </nav>
+        </section>
+        <div class="footer-bottom">
+            <p>Copyright &copy;2024 - Diseñado por Reputation Team - Todos los derechos reservados</p>
+        </div>
+    </footer>
+    <!--FOOTER FIN-->
+</body>
+</html>
