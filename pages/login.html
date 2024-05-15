@@ -1,54 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>iniciar sesion</title>
-    <link rel="stylesheet" href="../styles/estiloLogin.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bodoni
-+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@100..900&family=Libre
-Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="../styles/estiloLogin.css"/>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@100..900&family=LibreBaskerville:ital,wght@0,400;0,700;1,400&display=swap"rel="stylesheet"/>
+  </head>
 
+  <div class="banner">
+    <header>
+      <div class="icon">
+        <img src="../Assets/taylix icon marron.png" />
+      </div>
+    </header>
+  </div>
 
-    <div class="banner">
-        <header>
-            <div class="icon">
-                <img src="../Assets/taylix icon marron.png">
-            </div>
-        </header>
-    </div>
-    
-
-
-<div class="Contenedor">
-   
+  <div class="Contenedor">
     <form action="">
-        <h1>Iniciar sesion</h1>
-            <div class="caja">
-                <input type="text" placeholder="Nombre de usuario" required>
-                <i class='bx bxs-user' ></i>
-            </div>
-            <div class="caja">
-                <input type="password" placeholder="Contraseña" required>
-                <i class='bx bxs-lock-alt' ></i>
-            </div>
-        <div class="recordarme"></div>
-        <label><input type="checkbox">Recordarme</label>
-      <a href="resetPassword.html">¿Has olvidado la contraseña?</a> 
+      <h1>Iniciar sesion</h1>
+      <div class="caja">
+        <input type="text" placeholder="Nombre de usuario" required />
+        <i class="bx bxs-user"></i>
+      </div>
+      <div class="caja">
+        <input type="password" placeholder="Contraseña" required />
+        <i class="bx bxs-lock-alt"></i>
+      </div>
+    </form> <!--Dejamos que el form no incluya los botones que están debajo porque sino siempre nos redirige a login constantemente-->
+      <div class="recordarme"></div>
+      <label><input type="checkbox" />Recordarme</label>
+      <a href="resetPassword.html">¿Has olvidado la contraseña?</a>
       <div>
-     <button type="submit" class="boton">Iniciar sesion</button>
-    </div>
-     <div class="registrarse"></div>
-     <p>¿No tienes cuenta? <a href="registerUser.html">Registrarse</a></p>
-     
-    </form>
+        <a href="../pages/home.html"><button type="submit" class="boton">Iniciar sesion</button></a>
+      </div>
+      <div class="registrarse"></div>
+      <p>¿No tienes cuenta? <a href="registerUser.html">Registrarse</a></p>
+  </div>
 
-</div>
-
-<body>
-    
-    
-</body>
+  <body></body>
 </html>
