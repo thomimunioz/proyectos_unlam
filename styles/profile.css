@@ -19,55 +19,49 @@ body{
 
 
 header{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #cac2b5;
     display: flex;
+    width: 100%;
+    height: 12%;
+    background-color: rgba(207, 201, 190);
+    position: fixed;
+    top:0;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     z-index: 100;
-    
-    }
-    
-    .contenedorHeader img{
-        width: 100px;
-        height: auto;
-        margin-left: 30px;
-        margin-top: 10px;
-    }
-    
-    .menu-icon{
-        display: none;
-    }
-    .menu a{
-        position: relative;
-        text-decoration: none;
-        font-family: "Bebas Neue";
-        font-size: 20px;
-        color: #625548;
-        margin-left: 20px;
-        margin-right: 20px;
-        font-weight: 600;
-    
-    }
-    
-    .menu a::before{
-        content: '';
-        position: absolute;
-        top:100%;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: #625548;
-        transition: .3s;
-    
-    }
-    
-    .menu a:hover::before{
-        width: 100%;
-    }
+}
 
+.contenedorHeader img{
+    width: 100px;
+    height: auto;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.navegacion a{
+    position: relative;
+    text-decoration: none;
+    font-family: "Bebas Neue";
+    font-size: 20px;
+    color: #625548;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: 600;
+}
+
+.navegacion a::before{
+    content: '';
+    position: absolute;
+    top:100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #625548;
+    transition: .3s;
+}
+
+.navegacion a:hover::before{
+    width: 100%;
+}
 
 
     .contenedorPerfil{
@@ -244,7 +238,7 @@ header{
 
 
         body{
-            background-image: url(../Assets/indexMobileBack.jpg);
+            background-image: url(../Assets/index/indexMobileBack.jpg);
             background-size:cover;
             background-position:center;
             background-repeat: no-repeat;
@@ -257,41 +251,33 @@ header{
         background-color: transparent;
     }
 
-    .contenedorHeader{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: auto;
-        width: 100%;
-
-
-    }
+    
 
     .contenedorHeader img{
-        display: flex;
-        margin-left: 0;
-
+        width: 80px;
     }
 
-
-    .menu-icon{
+    .navegacion {
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3%;
+        justify-content: right;
+    }
+
+    .contenedorPerfil{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
     }
     
-    .menu{
-    display: none;
-
-    }
-
-
-
-    }
 
     @media  screen and (max-width:1024px) and (min-width:600px){
         
         body{
-            background-image: url(../Assets/indexTabletBack.jpg);
+            background-image: url(../Assets/index/indexTabletBack.jpg);
             background-size:cover;
             background-position:center;
             background-repeat: no-repeat;

@@ -92,3 +92,36 @@ header{
     object-fit: contain;
 
 }
+
+
+@media  screen and (max-width: 600px){
+    
+    
+    
+    .contenedorHeader img{
+        width: 80px;
+    }
+
+    .navegacion {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3%;
+        justify-content: right;
+    }
+
+    .title{
+        margin-top: 28%;
+    }
+
+    .entrevistas{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media  screen and (max-width:1024px) and (min-width:600px){
+
+    .title{
+        margin-top: 18%;
+    }
+}

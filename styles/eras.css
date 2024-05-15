@@ -153,4 +153,43 @@ header{
 @media  screen and (max-width: 600px){
     
     
+    
+    .contenedorHeader img{
+        width: 80px;
+    }
+
+    .navegacion {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3%;
+        justify-content: right;
+    }
+
+    .ttpd{
+        display: grid;
+        background-image: none;
+        background-color: #625548;
+        justify-items: center;
+        align-items: center;
+
+    }
+
+    .info{
+        width: 100%;
+    }
+
+    .info h3{
+        font-size: 25px;
+    }
+
+    .boton{
+        justify-self: center;
+        margin-bottom: 10%;
+        
+    }
+
+    .eras{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
