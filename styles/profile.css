@@ -131,6 +131,56 @@ header{
         border: 2.5px solid #625548;
     }
 
+
+    .formaPago h2{
+        margin-top: 20px;
+        
+    }
+
+
+    .tarjeta {
+        margin-top: 5px;
+        display: grid;
+        grid-template-areas: "uno uno"
+                             "dos tres";
+        align-items: center;
+        justify-content: center;
+    }
+
+    .formaPago input{
+        width: 100%;
+        border-radius: 20px;
+        margin-top: 5px;
+        height: 20px;
+        text-align: center;
+
+    }
+
+
+    .inputDos{
+        grid-area: uno;
+
+    }
+
+    .formaPago .inputTres{
+        width: 80%;
+        grid-area: dos;
+    
+
+    }
+
+    .formaPago .inputCuatro{
+        width: 80%;
+        grid-area: tres;
+        justify-content: center;
+    
+        
+
+    }
+
+
+
+
     .infoPerfil{
         display: flex;
         flex-direction: column;
