@@ -11,31 +11,45 @@
 
 </head>
 <body>
-    <header>   
+
+    <header>
         <div class="contenedorHeader">
-            <div class="menu-icon"></div>
+            <div class="menu-icon"><i class='bx bx-menu'></i></div>
             <a href="./home.html">
                 <img src="../Assets/taylix icon marron.png">
             </a>
+            
+
         </div>
-            <div class="navegacion">
-                <a href="./home.html">Inicio</a>
-                <a href="./eras.html">Eras</a>
-                <a href="./peliculas.html">Peliculas</a>
-                <a href="./entrevistas.html">Entrevistas</a>
-                <a href="./profile.html">Mi cuenta</a>
-            </div>
-    
+
+
+
+
+        <nav class="menu">
+            <a href="./home.html">Inicio</a>
+            <a href="./eras.html">Eras</a>
+            <a href="./peliculas.html">Películas</a>
+            <a href="./entrevistas.html">Entrevistas</a>
+            <a href="./miCuenta.html">Mi Cuenta</a>
+        </nav>
+
     </header>
+
+
     <main>
+
+      
             <div class="contenedorPerfil">
+
                 <div class="fotoPerfil">
                     <div class="grande">
                         <img src="../Assets/iconsPerfil/ttpd.jpg">
                     </div>
+
                     <div class="cambiarIcon">
                         <h3>Cambiar Icon</h3>
                     </div>
+
                     <div class="bordecito">
                         <div class="seleccion" id="uno">
                             <img src="../Assets/iconsPerfil/taylorSwift.jpg">
@@ -46,59 +60,94 @@
                             <img src="../Assets/iconsPerfil/reputation.jpg">
 
                         </div>
+
                         <div class="seleccion" id="dos">
+
                             <img src="../Assets/iconsPerfil/lover.jpg">
                             <img src="../Assets/iconsPerfil/folklore.jpg">
                             <img src="../Assets/iconsPerfil/evermore.jpg">
                             <img src="../Assets/iconsPerfil/midnights.jpg">
                             <img src="../Assets/iconsPerfil/ttpd.jpg">
                         </div>
+
                     </div>
 
-                    <div class = "formaPago">
-                        <h2>Método de pago</h2>
-                    <div class = "tarjeta">
-                        <div class = "inputDos"> <input type="number" placeholder="Número de la tarjeta" required> </div>
-                        <div class = "inputTres"><input type="number" placeholder="XXX" required> </div>
-                        <div class = "inputCuatro"><input type="date" placeholder="FV" required> </div>
-                    </div>
-
-
-                </div>
-
+         
 
 
                     </div>
+
                 <div class="infoPerfil">
                         <h1>Perfil</h1>
-                        <input type="text" placeholder="  Nombre de Usuario Actual">
+                        <input type="text" name="usuario" id="usuario" placeholder="Usuario">
+
                         <div class="email-y-contraseña">
                             <div class="email">
                                 <h2>Email</h2>
                                 <h4>mail-predeterminado@gmail.com</h4>
                             </div>
+                            
+        
                             <div class="contraseña">
                                 <h2>Contraseña</h2>
                                 <h4>*********</h4>
-                                <a href="./resetPassword.html"><p>Cambiar contraseña</p></a>
+                                <a href="./recupero.html"><p>Cambiar contraseña</p></a>
                             </div>
+
+
                         </div>
-                        <div class="selecIdioma">
-                            <h2>Idioma</h2>
-                            <ul class="seleccionarIdioma">
-                                <li>Español</li>
-                                <li>English</li>
-                                <li>Português</li>
-                            </ul>
-                        </div>
-                        <div class="botones">
-                            <a href="./profile.html"><button type="submit">Confirmar cambios</button></a>
-                        </div>
+        
+                
+        
+                </div>
+               
+    
+                <div class="medioDePago">
+                    <h2>Método de pago</h2>
+                    <div class = "formaPago">
+                        
+                    <div class = "tarjeta" >
+                        <div class = "inputUno"><label><input type="checkbox" name="metodoMain" id ="tarjeta">Tarjeta de crédito</label></div>
+                        <div class = "inputDos"> <input type="number" placeholder="Número de la tarjeta" required> </div>
+                        <div class = "inputTres"><input type="number" placeholder="XXX" required> </div>
+                        <div class = "inputCuatro"><input type="date" placeholder="FV" required> </div>
+                    </div>
+
+                    <div class = "cuponPago">
+                        <label><input type="checkbox" id ="cuponPago" name="metodoMain">Cupón de pago</label>
+                        <label><input type="checkbox" id ="pagoFacil" name="cupon">Pago Fácil</label>
+                        <label><input type="checkbox" id= "rapipago" name="cupon">Rapipago</label>
+
+
+                    </div>
+
+                    <div class="transferencia">
+                        <label><input type="checkbox"  id ="transferenciaBancaria" name="metodoMain">Transferencia</label>
+                        <p>CBU: 1616506563</p>
+
+
+                    </div>
+
+
+                    </div>
+                    <div class="botones">
+                        <button type="submit">Confirmar cambios</button>
+    
+
+                    </div>
+
+                </div>
                 </div>
             </div>
         </div>
-    </main>
+        
 
-    <script src ="../script/profile.js"></script>
+
+
+
+    </main>
+    
+    <script src="../script/profile.js"></script>
+
 </body>
 </html>

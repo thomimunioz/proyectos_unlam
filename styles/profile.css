@@ -19,70 +19,79 @@ body{
 
 
 header{
-    display: flex;
-    width: 100%;
-    height: 12%;
-    background-color: rgba(207, 201, 190);
     position: fixed;
-    top:0;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 100;
-}
-
-.contenedorHeader img{
-    width: 100px;
-    height: auto;
-    margin-left: 30px;
-    margin-top: 10px;
-}
-
-.navegacion a{
-    position: relative;
-    text-decoration: none;
-    font-family: "Bebas Neue";
-    font-size: 20px;
-    color: #625548;
-    margin-left: 20px;
-    margin-right: 20px;
-    font-weight: 600;
-}
-
-.navegacion a::before{
-    content: '';
-    position: absolute;
-    top:100%;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #625548;
-    transition: .3s;
-}
-
-.navegacion a:hover::before{
+    top: 0;
     width: 100%;
-}
+    background: #cac2b5;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    z-index: 100;
+    
+    }
+    
+    .contenedorHeader img{
+        width: 100px;
+        height: auto;
+        margin-left: 30px;
+        margin-top: 10px;
+    }
+    
+    .menu-icon{
+        display: none;
+    }
+    .menu a{
+        position: relative;
+        text-decoration: none;
+        font-family: "Bebas Neue";
+        font-size: 20px;
+        color: #625548;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-weight: 600;
+    
+    }
+    
+    .menu a::before{
+        content: '';
+        position: absolute;
+        top:100%;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #625548;
+        transition: .3s;
+    
+    }
+    
+    .menu a:hover::before{
+        width: 100%;
+    }
+
 
 
     .contenedorPerfil{
         display: grid;
-        grid-template-columns: 0.5fr 1fr;
+        grid-template-areas: "uno dos"
+                             "uno dos"
+                             "tres tres";
         border: 2px solid #625548;
         border-radius: 20px;
         background-color: #cac2b5;
         color: #625548;
         padding: 30px;
         padding-right: 50px;
-        gap: 60px;
         box-shadow: #625548;
 
     }
 
-    .contenedorPerfil .fotoPerfil{
+    .fotoPerfil{
+        grid-area: uno;
         display: flex;
         flex-direction: column;
         align-items:center;
         height: 100%;
+        margin-right: 40px;
     }
 
     .grande img{
@@ -127,61 +136,10 @@ header{
 
     }
 
-    .seleccion img:hover{
-        border: 2.5px solid #625548;
-    }
-
-
-    .formaPago h2{
-        margin-top: 20px;
-        
-    }
-
-
-    .tarjeta {
-        margin-top: 5px;
-        display: grid;
-        grid-template-areas: "uno uno"
-                             "dos tres";
-        align-items: center;
-        justify-content: center;
-    }
-
-    .formaPago input{
-        width: 100%;
-        border-radius: 20px;
-        margin-top: 5px;
-        height: 20px;
-        text-align: center;
-
-    }
-
-
-    .inputDos{
-        grid-area: uno;
-
-    }
-
-    .formaPago .inputTres{
-        width: 80%;
-        grid-area: dos;
-    
-
-    }
-
-    .formaPago .inputCuatro{
-        width: 80%;
-        grid-area: tres;
-        justify-content: center;
-    
-        
-
-    }
-
-
 
 
     .infoPerfil{
+        grid-area: dos;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -197,6 +155,7 @@ header{
         padding: 4px;
         width: 200px;
     }
+
 
     .email-y-contraseña{
         display: flex;
@@ -227,39 +186,108 @@ header{
     }
 
 
-    .seleccionarIdioma {
+    .seleccion img:hover{
+        border: 2.5px solid #625548;
+    }
+
+
+
+    .medioDePago{
+        grid-area: tres;
+
+  
+    }
+
+    .formaPago{
         display: flex;
-        flex-direction: row;
-        gap: 20px;
-        list-style: none;
-        margin-top: 5px;
-
-    }
-    .seleccionarIdioma li{
-        position: relative;
-
-    }
-
-    .seleccionarIdioma li::before{
-        content: '';
-        position: absolute;
-        top: 100%;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        background-color: #625548;
-        height: 1px;
-    }
-
-    .seleccionarIdioma li:hover::before{
+        flex-direction: row ;
+        margin-top: 10px;
         width: 100%;
+        justify-content: center;
+
     }
 
+
+    .formaPago .tarjeta{
+        display: grid;
+        grid-template-areas: "uno uno"
+                             "dos dos"
+                             "tres cuatro";
+
+    }
+
+
+
+    .tarjeta .inputUno{
+        grid-area: uno;
+        margin-bottom: 10px;
+    }
+
+    .tarjeta .inputDos{
+        grid-area: dos;
+    }
+
+    .inputDos input{
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .tarjeta .inputTres{
+        grid-area: tres;
+        
+    }
+
+    .inputTres input{
+        border-radius: 20px;
+        text-align: center;
+        width: 50px;
+
+    }
+
+    .tarjeta .inputCuatro{
+        grid-area: cuatro;
+    }
+
+    .inputCuatro input{
+        border-radius: 20px;
+        text-align: center;
+        width: fit-content;
+
+    }
+    .formaPago .cuponPago{
+        grid-area: dos;
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        
+    
+    }
+
+    .cuponPago #metodoMain{
+        margin-bottom: 10px;
+    }
+
+    .transferencia{
+        grid-area: tres;
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+    }
+
+    .transferencia p{
+        margin-top: 10px;
+    }
+
+
+    
 
     .botones{
-        margin-top: 30px;
-        margin-bottom: 15px;
-        margin-left: 20px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+
         
     }
     
@@ -288,7 +316,7 @@ header{
 
 
         body{
-            background-image: url(../Assets/index/indexMobileBack.jpg);
+            background-image: url(../Assets/indexMobileBack.jpg);
             background-size:cover;
             background-position:center;
             background-repeat: no-repeat;
@@ -301,33 +329,42 @@ header{
         background-color: transparent;
     }
 
-    
+    .contenedorHeader{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        width: 100%;
+
+
+    }
 
     .contenedorHeader img{
-        width: 80px;
-    }
-
-    .navegacion {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 3%;
-        justify-content: right;
+        margin-left: 0;
+
     }
 
-    .contenedorPerfil{
+
+    .menu-icon{
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+        
 
     }
-    
+
+    .menu{
+    display: none;
+
+    }
+
+
+
+    }
 
     @media  screen and (max-width:1024px) and (min-width:600px){
         
         body{
-            background-image: url(../Assets/index/indexTabletBack.jpg);
+            background-image: url(../Assets/indexTabletBack.jpg);
             background-size:cover;
             background-position:center;
             background-repeat: no-repeat;
