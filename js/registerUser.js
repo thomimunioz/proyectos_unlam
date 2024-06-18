@@ -1,21 +1,15 @@
 
 const form = document.querySelector('.register-box');
-const nombre = document.querySelector('input[placeholder="  Ingrese nombre"]');
-const apellido = document.querySelector('input[placeholder="  Ingrese apellido"]');
-const email = document.querySelector('input[placeholder="  Ingrese email"]');
-const nombreUsuario = document.createElement('input');
-const contrasena = document.querySelector('input[placeholder="  Ingrese contraseña"]');
-const repetirContrasena = document.querySelector('input[placeholder="  Repetir contraseña"]');
+const nombre = document.querySelector('input[placeholder="Ingrese nombre"]');
+const apellido = document.querySelector('input[placeholder="Ingrese apellido"]');
+const email = document.querySelector('input[placeholder="Ingrese email"]');
+const nombreUsuario = document.querySelector('input[placeholder="Ingrese usuario"]');
+const contrasena = document.querySelector('input[placeholder="Ingrese contraseña"]');
+const repetirContrasena = document.querySelector('input[placeholder="Repetir contraseña"]');
 const tarjetaNumero = document.querySelector('input[placeholder="Número de la tarjeta"]');
 const tarjetaClave = document.querySelector('input[placeholder="XXX"]');
 const confirmarBoton = document.querySelector('button.confirmar');
 const cancelarBoton = document.querySelector('button.cancelar');
-
-
-nombreUsuario.type = 'text';
-nombreUsuario.placeholder = '  Ingrese nombre de usuario';
-nombreUsuario.required = true;
-document.querySelector('.columnaUno').insertBefore(nombreUsuario, contrasena);
 
 
 function soloLetras(cadena) {
@@ -65,7 +59,18 @@ function esClaveValida(clave) {
 
 
 function validarFormulario() {
-    const camposValidos = 
+    const camposLlenos =
+        nombre.value.trim() !== '' &&
+        apellido.value.trim() !== '' &&
+        email.value.trim() !== '' &&
+        nombreUsuario.value.trim() !== '' &&
+        contrasena.value.trim() !== '' &&
+        repetirContrasena.value.trim() !== '' &&
+        tarjetaNumero.value.trim() !== '' &&
+        tarjetaClave.value.trim() !== '';
+
+    const camposValidos =
+        camposLlenos &&
         soloLetras(nombre.value) &&
         soloLetras(apellido.value) &&
         esEmailValido(email.value) &&
