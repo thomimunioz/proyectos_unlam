@@ -2,22 +2,14 @@
 document.addEventListener("DOMContentLoaded", () => {
 
 
-    const iconElements = document.querySelectorAll(".seleccion img");
-    const profileImage = document.querySelector(".fotoPerfil .grande img");
-
-    iconElements.forEach(icon => {
-        icon.addEventListener("click", () => {
-            profileImage.src = icon.src;
-        });
-    });
 
    
     const tarjetaCheck = document.getElementById("tarjeta");
     const tarjetaInput = document.querySelector(".inputDos input");
     const cvcInput = document.querySelector(".inputTres input");
     const fechaInput = document.querySelector(".inputCuatro input");
-    const tarjetaNumero = tarjetaInput.value;
-    const CVCNumero = cvcInput.value;
+    
+    
     
     const submitButton = document.querySelector(".botones button");
 
@@ -30,8 +22,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const transferenciaBancaria = document.getElementById("transferenciaBancaria");
 
+    
+    const iconElements = document.querySelectorAll(".seleccion img");
+    const profileImage = document.querySelector(".fotoPerfil .grande img");
+
+    iconElements.forEach(icon => {
+        icon.addEventListener("click", () => {
+            profileImage.src = icon.src;
+        });
+    });
+
 
 function cargarEstado() {
+    profileImage.src = localStorage.getItem("profileImage") || '';
 tarjetaCheck.checked = JSON.parse(localStorage.getItem("tarjetaCheck")) || false;
 tarjetaInput.value = localStorage.getItem("tarjetaInput") || '';
 cvcInput.value = localStorage.getItem("cvcInput") || '';
@@ -43,6 +46,7 @@ transferenciaBancaria.checked = JSON.parse(localStorage.getItem("transferenciaBa
 }
 
 function guardarEstado() {
+    localStorage.setItem("profileImage", profileImage.src);
 localStorage.setItem("tarjetaCheck", JSON.stringify(tarjetaCheck.checked));
 localStorage.setItem("tarjetaInput", tarjetaInput.value);
 localStorage.setItem("cvcInput", cvcInput.value);
@@ -108,15 +112,19 @@ if (rapipagoCheck.checked) {
 
         if(tarjetaCheck.checked){
             let isValid = true;
+
         if (tarjetaInput.value.length < 16 || tarjetaInput.value.length > 19) {
             isValid = false;
             alert("El número de tarjeta debe tener entre 16 y 19 dígitos.");
         }
     
+        const CVCNumero = cvcInput.value;
+        let arrayCVC = Array.from(CVCNumero);
         let cvcero = 0;
 
-        for(let i = 0; i < CVCNumero.length; i++){
-            if(CVCNumero[i] === 0){
+
+        for(let i = 0; i < arrayCVC.length; i++){
+            if(arrayCVC[i] === "0"){
                 cvcero++;
             }
         }
@@ -132,17 +140,18 @@ if (rapipagoCheck.checked) {
             alert("Debe ingresar una fecha de vencimiento.");
         }
         
-        
+        const tarjetaNumero = tarjetaInput.value;
+        let arrayTarjeta = Array.from(tarjetaNumero);
         let suma = 0;
         
-        for (let i = 0; i< tarjetaNumero.length - 1; i++){
-            suma += parseInt(tarjetaNumero[i], 10);
+        for (let i = 0; i< arrayTarjeta.length - 1; i++){
+            suma += parseInt(arrayTarjeta[i], 10);
         }
 
-        const ultimoDigito = parseInt(tarjetaNumero[tarjetaNumero.length-1],10);
+        const ultimoDigito = parseInt(arrayTarjeta[arrayTarjeta.length-1],10);
 
         if((suma%2 === 0 && ultimoDigito % 2 !== 0) || (suma%2 !== 0 && ultimoDigito %2 === 0)){
-            alert("Método de pago validado correctamente.");
+            alert("Los cambios se han guardado correctamente.");
         } else {
             alert("La tarjeta es inválida.");
                 isValid = false;
@@ -150,17 +159,17 @@ if (rapipagoCheck.checked) {
 
 
         if (isValid) {
-            alert("Método de pago validado correctamente.");
+            alert("Los cambios se han guardado correctamente.");
         } 
 
         } 
             
         if(cuponPago.checked){
                 if(pagoFacilCheck.checked && !rapipagoCheck.checked){
-                    alert("Método de pago validado correctamente.");
+                    alert("Los cambios se han guardado correctamente.");
                 } else {
                     if(!pagoFacilCheck.checked && rapipagoCheck.checked){
-                        alert("Método de pago validado correctamente.");
+                        alert("Los cambios se han guardado correctamente.");
                     } else {
                         alert("La opción no es válida.");
                     }
@@ -169,7 +178,7 @@ if (rapipagoCheck.checked) {
             }
         
         if (transferenciaBancaria.checked){ 
-            alert("Método de pago validado correctamente.");
+            alert("Los cambios se han guardado correctamente.");
         }
         
         
@@ -179,6 +188,13 @@ if (rapipagoCheck.checked) {
     const usernameInput = document.querySelector(".infoPerfil input[type='text']");
     usernameInput.addEventListener("change", () => {
         console.log(`Nuevo nombre de usuario: ${usernameInput.value}`);
+    });
+
+
+
+    submitButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        guardarEstado();
     });
 
     window.onload = cargarEstado;
