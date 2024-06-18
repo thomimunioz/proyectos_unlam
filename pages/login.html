@@ -9,35 +9,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@100..900&family=LibreBaskerville:ital,wght@0,400;0,700;1,400&display=swap"rel="stylesheet"/>
   </head>
 
-  <div class="banner">
-    <header>
-      <div class="icon">
-        <a href="../index.html"><img src="../Assets/taylix icon marron.png" /></a>
-      </div>
-    </header>
-  </div>
+  
 
-  <div class="Contenedor">
-    <form action="">
-      <h1>Iniciar sesion</h1>
-      <div class="caja">
-        <input type="text" placeholder="Nombre de usuario" required />
-        <i class="bx bxs-user"></i>
+  <body>
+    <div class="banner">
+        <header>
+          <div class="icon">
+            <a href="../index.html"><img src="../Assets/taylix icon marron.png" /></a>
+          </div>
+        </header>
       </div>
-      <div class="caja">
-        <input type="password" placeholder="Contraseña" required />
-        <i class="bx bxs-lock-alt"></i>
+    
+      <div class="Contenedor">
+        <form action="">
+          <h1>Iniciar sesion</h1>
+          <div class="caja">
+            <input type="text" placeholder="Nombre de usuario" required />
+            <i class="bx bxs-user"></i>
+          </div>
+          <div class="caja">
+            <input type="password" placeholder="Contraseña" required />
+            <i class="bx bxs-lock-alt"></i>
+          </div>
+        </form> 
+          <div class="recordarme"></div>
+          <label><input type="checkbox" />Recordarme</label>
+          <a href="resetPassword.html">¿Has olvidado la contraseña?</a>
+          <div>
+            <a href="../pages/home.html"><button type="submit" class="boton">Iniciar sesion</button></a>
+          </div>
+          <div class="registrarse"></div>
+          <p>¿No tienes cuenta? <a href="registerUser.html">Registrarse</a></p>
       </div>
-    </form> <!--Dejamos que el form no incluya los botones que están debajo porque sino siempre nos redirige a login constantemente-->
-      <div class="recordarme"></div>
-      <label><input type="checkbox" />Recordarme</label>
-      <a href="resetPassword.html">¿Has olvidado la contraseña?</a>
-      <div>
-        <a href="../pages/home.html"><button type="submit" class="boton">Iniciar sesion</button></a>
-      </div>
-      <div class="registrarse"></div>
-      <p>¿No tienes cuenta? <a href="registerUser.html">Registrarse</a></p>
-  </div>
-
-  <body></body>
+      <script src="../js/login.js"></script>
+  </body>
 </html>
