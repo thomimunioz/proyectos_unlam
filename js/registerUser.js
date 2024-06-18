@@ -167,7 +167,7 @@ function validarFormulario() {
         mostrarError(repetirContrasenaError, 'Repetir la contraseña.');
         esValido = false;
     } else if (!coincidenContrasenas(contrasena.value, repetirContrasena.value)) {
-        mostrarError(repetirContrasenaError, 'Las contraseñas no coinciden.');
+        mostrarError(repetirContrasenaError, 'contraseñas no coinciden.');
         esValido = false;
     } else {
         ocultarError(repetirContrasenaError);
