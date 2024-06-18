@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cvcInput = document.querySelector(".inputTres input");
     const fechaInput = document.querySelector(".inputCuatro input");
     const tarjetaNumero = tarjetaInput.value;
+    const CVCNumero = cvcInput.value;
     
     const submitButton = document.querySelector(".botones button");
 
@@ -30,6 +31,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const transferenciaBancaria = document.getElementById("transferenciaBancaria");
 
 
+function cargarEstado() {
+tarjetaCheck.checked = JSON.parse(localStorage.getItem("tarjetaCheck")) || false;
+tarjetaInput.value = localStorage.getItem("tarjetaInput") || '';
+cvcInput.value = localStorage.getItem("cvcInput") || '';
+fechaInput.value = localStorage.getItem("fechaInput") || '';
+cuponCheck.checked = JSON.parse(localStorage.getItem("cuponCheck")) || false;
+pagoFacilCheck.checked = JSON.parse(localStorage.getItem("pagoFacilCheck")) || false;
+rapipagoCheck.checked = JSON.parse(localStorage.getItem("rapipagoCheck")) || false;
+transferenciaBancaria.checked = JSON.parse(localStorage.getItem("transferenciaBancaria")) || false;
+}
+
+function guardarEstado() {
+localStorage.setItem("tarjetaCheck", JSON.stringify(tarjetaCheck.checked));
+localStorage.setItem("tarjetaInput", tarjetaInput.value);
+localStorage.setItem("cvcInput", cvcInput.value);
+localStorage.setItem("fechaInput", fechaInput.value);
+localStorage.setItem("cuponCheck", JSON.stringify(cuponCheck.checked));
+localStorage.setItem("pagoFacilCheck", JSON.stringify(pagoFacilCheck.checked));
+localStorage.setItem("rapipagoCheck", JSON.stringify(rapipagoCheck.checked));
+localStorage.setItem("transferenciaBancaria", JSON.stringify(transferenciaBancaria.checked));
+}
 
 function desmarcarOtrosExceptoCupon(checkbox) {
 const checkboxes = [tarjetaCheck, cuponCheck, transferenciaBancaria];
@@ -90,12 +112,21 @@ if (rapipagoCheck.checked) {
             isValid = false;
             alert("El número de tarjeta debe tener entre 16 y 19 dígitos.");
         }
-        
-        if (cvcInput.value.length !== 3) {
-            isValid = false;
-            alert("El CVC debe tener 3 dígitos.");
+    
+        let cvcero = 0;
+
+        for(let i = 0; i < CVCNumero.length; i++){
+            if(CVCNumero[i] === 0){
+                cvcero++;
+            }
         }
         
+        if (CVCNumero.length !== 3 || cvcero !== 0) {
+            isValid = false;
+            alert("El CVC es inválido.");
+        }
+        
+
         if (!fechaInput.value) {
             isValid = false;
             alert("Debe ingresar una fecha de vencimiento.");
@@ -150,6 +181,6 @@ if (rapipagoCheck.checked) {
         console.log(`Nuevo nombre de usuario: ${usernameInput.value}`);
     });
 
-   
+    window.onload = cargarEstado;
 
 });
