@@ -175,7 +175,7 @@ function validarFormulario() {
 
     
     if (tarjetaNumero.value.trim() && !esTarjetaValida(tarjetaNumero.value)) {
-        mostrarError(tarjetaNumeroError, 'El número de tarjeta no es válido.');
+        mostrarError(tarjetaNumeroError, 'número de tarjeta no válido.');
         esValido = false;
     } else {
         ocultarError(tarjetaNumeroError);
