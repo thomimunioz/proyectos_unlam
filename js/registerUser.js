@@ -12,6 +12,40 @@ const confirmarBoton = document.querySelector('button.confirmar');
 const cancelarBoton = document.querySelector('button.cancelar');
 
 
+const createErrorElement = () => {
+    const errorElement = document.createElement('span');
+    errorElement.className = 'error';
+    errorElement.style.color = 'red';
+    errorElement.style.display = 'none';
+    return errorElement;
+};
+
+
+const nombreError = createErrorElement();
+nombre.parentNode.appendChild(nombreError);
+
+const apellidoError = createErrorElement();
+apellido.parentNode.appendChild(apellidoError);
+
+const emailError = createErrorElement();
+email.parentNode.appendChild(emailError);
+
+const nombreUsuarioError = createErrorElement();
+nombreUsuario.parentNode.appendChild(nombreUsuarioError);
+
+const contrasenaError = createErrorElement();
+contrasena.parentNode.appendChild(contrasenaError);
+
+const repetirContrasenaError = createErrorElement();
+repetirContrasena.parentNode.appendChild(repetirContrasenaError);
+
+const tarjetaNumeroError = createErrorElement();
+tarjetaNumero.parentNode.appendChild(tarjetaNumeroError);
+
+const tarjetaClaveError = createErrorElement();
+tarjetaClave.parentNode.appendChild(tarjetaClaveError);
+
+
 function soloLetras(cadena) {
     return /^[A-Za-z]+$/.test(cadena);
 }
@@ -58,50 +92,122 @@ function esClaveValida(clave) {
 }
 
 
-function validarFormulario() {
-    const camposLlenos =
-        nombre.value.trim() !== '' &&
-        apellido.value.trim() !== '' &&
-        email.value.trim() !== '' &&
-        nombreUsuario.value.trim() !== '' &&
-        contrasena.value.trim() !== '' &&
-        repetirContrasena.value.trim() !== '' &&
-        tarjetaNumero.value.trim() !== '' &&
-        tarjetaClave.value.trim() !== '';
-
-    const camposValidos =
-        camposLlenos &&
-        soloLetras(nombre.value) &&
-        soloLetras(apellido.value) &&
-        esEmailValido(email.value) &&
-        esNombreUsuarioValido(nombreUsuario.value) &&
-        esContrasenaValida(contrasena.value) &&
-        coincidenContrasenas(contrasena.value, repetirContrasena.value) &&
-        esTarjetaValida(tarjetaNumero.value) &&
-        esClaveValida(tarjetaClave.value);
-
-    confirmarBoton.disabled = !camposValidos;
+function mostrarError(elemento, mensaje) {
+    elemento.textContent = mensaje;
+    elemento.style.display = 'block';
 }
 
 
-[nombre, apellido, email, nombreUsuario, contrasena, repetirContrasena, tarjetaNumero, tarjetaClave].forEach(input => {
-    input.addEventListener('input', validarFormulario);
+function ocultarError(elemento) {
+    elemento.textContent = '';
+    elemento.style.display = 'none';
+}
+
+
+function validarFormulario() {
+    let esValido = true;
+
+    
+    if (!nombre.value.trim()) {
+        mostrarError(nombreError, 'El nombre es requerido.');
+        esValido = false;
+    } else if (!soloLetras(nombre.value)) {
+        mostrarError(nombreError, 'solo contiene letras.');
+        esValido = false;
+    } else {
+        ocultarError(nombreError);
+    }
+
+    
+    if (!apellido.value.trim()) {
+        mostrarError(apellidoError, 'El apellido es requerido.');
+        esValido = false;
+    } else if (!soloLetras(apellido.value)) {
+        mostrarError(apellidoError, 'solo contiene letras.');
+        esValido = false;
+    } else {
+        ocultarError(apellidoError);
+    }
+
+    
+    if (!email.value.trim()) {
+        mostrarError(emailError, 'El email es requerido.');
+        esValido = false;
+    } else if (!esEmailValido(email.value)) {
+        mostrarError(emailError, 'El email no es válido.');
+        esValido = false;
+    } else {
+        ocultarError(emailError);
+    }
+
+    
+    if (!nombreUsuario.value.trim()) {
+        mostrarError(nombreUsuarioError, 'usuario es requerido.');
+        esValido = false;
+    } else if (!esNombreUsuarioValido(nombreUsuario.value)) {
+        mostrarError(nombreUsuarioError, 'solo letras y números.');
+        esValido = false;
+    } else {
+        ocultarError(nombreUsuarioError);
+    }
+
+    
+    if (!contrasena.value.trim()) {
+        mostrarError(contrasenaError, 'La contraseña es requerida.');
+        esValido = false;
+    } else if (!esContrasenaValida(contrasena.value)) {
+        mostrarError(contrasenaError, '8 car. 2 l. 2 n. 2 car.esp.');
+        esValido = false;
+    } else {
+        ocultarError(contrasenaError);
+    }
+
+    
+    if (!repetirContrasena.value.trim()) {
+        mostrarError(repetirContrasenaError, 'Repetir la contraseña.');
+        esValido = false;
+    } else if (!coincidenContrasenas(contrasena.value, repetirContrasena.value)) {
+        mostrarError(repetirContrasenaError, 'Las contraseñas no coinciden.');
+        esValido = false;
+    } else {
+        ocultarError(repetirContrasenaError);
+    }
+
+    
+    if (tarjetaNumero.value.trim() && !esTarjetaValida(tarjetaNumero.value)) {
+        mostrarError(tarjetaNumeroError, 'El número de tarjeta no es válido.');
+        esValido = false;
+    } else {
+        ocultarError(tarjetaNumeroError);
+    }
+
+    
+    if (tarjetaClave.value.trim() && !esClaveValida(tarjetaClave.value)) {
+        mostrarError(tarjetaClaveError, '3 dígitos distintos de cero.',);
+        esValido = false;
+    } else {
+        ocultarError(tarjetaClaveError);
+    }
+
+    
+    confirmarBoton.disabled = !esValido;
+
+    return esValido;
+}
+
+
+[nombre, apellido, email, nombreUsuario, contrasena, repetirContrasena, tarjetaNumero, tarjetaClave].forEach(campo => {
+    campo.addEventListener('input', validarFormulario);
 });
 
 
-confirmarBoton.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (confirmarBoton.disabled) {
-        alert('Por favor, complete todos los campos correctamente.');
-    } else {
-        window.location.href = 'login.html';
+form.addEventListener('submit', function(event) {
+    if (!validarFormulario()) {
+        event.preventDefault();
     }
 });
 
-cancelarBoton.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.location.href = 'login.html';
+
+document.addEventListener('DOMContentLoaded', () => {
+    confirmarBoton.disabled = true;
 });
-
-
-validarFormulario();
