@@ -16,7 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const tarjetaInput = document.querySelector(".inputDos input");
     const cvcInput = document.querySelector(".inputTres input");
     const fechaInput = document.querySelector(".inputCuatro input");
+    const tarjetaNumero = tarjetaInput.value;
+    
     const submitButton = document.querySelector(".botones button");
+
+
+
 
     const cuponCheck = document.getElementById("cuponPago");
     const pagoFacilCheck = document.getElementById("pagoFacil");
@@ -73,15 +78,17 @@ if (rapipagoCheck.checked) {
 }
 });
     
+
+
     submitButton.addEventListener("click", (event) => {
         event.preventDefault();
 
 
         if(tarjetaCheck.checked){
             let isValid = true;
-        if (tarjetaInput.value.length !== 16) {
+        if (tarjetaInput.value.length < 16 || tarjetaInput.value.length > 19) {
             isValid = false;
-            alert("El número de tarjeta debe tener 16 dígitos.");
+            alert("El número de tarjeta debe tener entre 16 y 19 dígitos.");
         }
         
         if (cvcInput.value.length !== 3) {
@@ -94,12 +101,30 @@ if (rapipagoCheck.checked) {
             alert("Debe ingresar una fecha de vencimiento.");
         }
         
+        
+        let suma = 0;
+        
+        for (let i = 0; i< tarjetaNumero.length - 1; i++){
+            suma += parseInt(tarjetaNumero[i], 10);
+        }
+
+        const ultimoDigito = parseInt(tarjetaNumero[tarjetaNumero.length-1],10);
+
+        if((suma%2 === 0 && ultimoDigito % 2 !== 0) || (suma%2 !== 0 && ultimoDigito %2 === 0)){
+            alert("Método de pago validado correctamente.");
+        } else {
+            alert("La tarjeta es inválida.");
+                isValid = false;
+        }
+
+
         if (isValid) {
             alert("Método de pago validado correctamente.");
         } 
 
-        } else {
-            if(cuponPago.checked){
+        } 
+            
+        if(cuponPago.checked){
                 if(pagoFacilCheck.checked && !rapipagoCheck.checked){
                     alert("Método de pago validado correctamente.");
                 } else {
@@ -111,7 +136,8 @@ if (rapipagoCheck.checked) {
                 }
 
             }
-        } if (transferenciaBancaria.checked){ 
+        
+        if (transferenciaBancaria.checked){ 
             alert("Método de pago validado correctamente.");
         }
         
