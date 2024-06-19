@@ -35,32 +35,32 @@
     <main>
     <div class="contenedor">
         <section class="reproductorTeaser">
-            <iframe src="https://www.youtube.com/embed/TB72bNlQmSc?si=41dcPu93kU5wNRB0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <a href="https://www.youtube.com/watch?v=TB72bNlQmSc" target="_blank"><button class="reproducir">Reproducir Pelicula</button></a>
+            <iframe title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <a id="linkReproducirVideo"  href="" target="_blank"><button class="reproducir">Reproducir Pelicula</button></a>
         </section>
     
 
         <section class="informacionPelicula">
             <article class="titulo">
-                <h2>Taylor Swift | The Eras Tour (Taylor's Version)</h2>
+                <h2 id="peliculaTitulo"></h2>
             </article>
             <article class="duracion">
                 <h3>Duracion:</h3>
-                <p>3h 30min.</p>
+                <p id="peliculaDuracion"></p>
             </article>
             
             <article class="genero">
                 <h3>Genero:</h3>
-                <p>Concierto</p>
+                <p id="peliculaGenero"></p>
             </article>
             <article class="productores">
                 <h3>Productores:</h3>
                 <div class="nombresProductor">
-                <a href="https://en.wikipedia.org/wiki/Taylor_Swift" target="_blank">Taylor Swift</a> <a href="https://www.imdb.com/name/nm3532802/" target="_blank">Sam Wrench</a>
+               
                 </div>
             </article>
             <article class="descripcion">
-                <p>Vive la experiencia de la "(Taylor's Version)", la versión exclusiva del fenómeno musical cinematográfico "Taylor Swift | The Eras Tour", con cuatro canciones adicionales del concierto principal nunca vistas en las salas de cine más una colección de cuatro versiones acústicas inéditas después de los créditos.</p>
+                <p id="peliculaResumen"></p>
             </article>
     </section>
     </div>
@@ -69,10 +69,10 @@
     </div>
     <div class="paddingabajo">
         <div class="otrasPeliculas">
-            <a href="./peliculasDetails.html"><img src="../Assets/movies/missAmericana.jpg"></a>
-            <a href="./peliculasDetails.html"><img src="../Assets/movies/folkloreTheLongPond.jpg"></a>
-            <a href="./peliculasDetails.html"><img src="../Assets/movies/amsterdam.jpg"></a>
-            <a href="./peliculasDetails.html"><img src="../Assets/movies/reputationStadiumTour.png"></a>
+            <a href="./peliculasDetails.html?nombre=Miss%20Americana"><img src="../Assets/home/peliculas/5-missamericana_portada.jpg"></a>
+            <a href="./peliculasDetails.html?nombre=Taylor%20Swift:%20Reputation%20Stadium%20Tour"><img src="../Assets/home/peliculas/10-reputationStadiumTour.jpg"></a>
+            <a href="./peliculasDetails.html?nombre=The%20RED%20Tour%20Live"><img src="../Assets/home/peliculas/12-redTour.jpg"></a>
+            <a href="./peliculasDetails.html?nombre=Taylor%20Swift:%20The%20Eras%20Tour"><img src="../Assets/home/peliculas/1-erastour_portada.jpg"></a>
 
     </main>
 
@@ -98,5 +98,8 @@
         </div>
     </footer>
     <!--FOOTER FIN-->
+
+<script src="../script/clasePeliculas.js"></script>
+<script src="../script/peliculasDetails.js"></script>
 </body>
 </html>

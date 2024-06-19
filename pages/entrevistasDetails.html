@@ -35,32 +35,32 @@
     <main>
     <div class="contenedor">
         <section class="reproductorTeaser">
-            <iframe src="https://www.youtube.com/embed/x8zfsf4azLo?si=6RKfbQNAVnY_ZkDS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <a href="https://www.youtube.com/watch?v=x8zfsf4azLo" target="_blank"><button class="reproducir">Reproducir Entrevista</button></a>
+            <iframe title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <a id="linkReproducirEntrevista"  href="" target="_blank"><button class="reproducir">Reproducir Entrevista</button></a>
         </section>
     
 
         <section class="informacionEntrevista">
             <article class="titulo">
-                <h2>Taylor Swift & Martin McDonagh | Directors on Directors</h2>
+                <h2 id="entrevistaTitulo"></h2>
             </article>
             <article class="duracion">
                 <h3>Duracion:</h3>
-                <p>46 min.</p>
+                <p id="entrevistaDuracion"></p>
             </article>
             
             <article class="programa">
                 <h3>Programa:</h3>
-                <p>Variety</p>
+                <p id="entrevistaPrograma"></p>
             </article>
             <article class="participantes">
-                <h3>Participantes:</h3>
+                <h3>Entrevistador:</h3>
                 <div class="nombresParticipantes">
-                <a href="https://en.wikipedia.org/wiki/Taylor_Swift" target="_blank">Taylor Swift</a> <a href="https://es.wikipedia.org/wiki/Martin_McDonagh" target="_blank">Martin McDonagh</a>
+                
                 </div>
             </article>
             <article class="descripcion">
-                <p>Taylor Swift y Martin McDonagh se sientan para discutir sus respectivas experiencias como directores. Taylor profundiza en el trabajo con Sadie Sink, sus planes para dirigir largometrajes y su último disco, 'Midnights'. Martin McDonagh menciona las técnicas que aprendió a lo largo de los años trabajando con Colin Farrell para 'The Banshees of Inisherin' y cómo es trabajar con un burro.</p>
+                <p id="entrevistaResumen"></p>
             </article>
     </section>
     </div>
@@ -69,10 +69,10 @@
     </div>
     <div class="paddingabajo">
         <div class="otrasEntrevistas">
-            <a href="./entrevistasDetails.html"><img src="../Assets/entrevistas/appleMusic2019.jpg"></a>
-            <a href="./entrevistasDetails.html"><img src="../Assets/entrevistas/ellenInterview2020.jpg"></a>
-            <a href="./entrevistasDetails.html"><img src="../Assets/entrevistas/inConversationWithTiff2022.jpg"></a>
-            <a href="./entrevistasDetails.html"><img src="../Assets/entrevistas/lateNight2022.jpg"></a>
+            <a href="./entrevistasDetails.html?Taylor%20Swift%20on%20Lover%20and%20haters"><img src="../Assets/home/entrevistas/3-sundaymorning_entrevista.jpg"></a>
+            <a href="./entrevistasDetails.html?nombre=Taylor%20Swift’s%20Full%20Interview%20with%20Ellen"><img src="../Assets/entrevistas/2-ellen_entrevista.jpg"></a>
+            <a href="./entrevistasDetails.html?nombre=Taylor%20Swift%20|%20The%20Tonight%20Show%20Starring%20Jimmy%20Fallon"><img src="../Assets/home/entrevistas/4-tonightshow_entrevista.jpg"></a>
+            <a href="./entrevistasDetails.html?nombre=Taylor%20Swift’s%20Songwriting%20Process%20on%20‘evermore’%20|%20Apple%20Music"><img src="../Assets/home/entrevistas/8-appleMusic.jpg"></a>
 
     </main>
 
@@ -99,5 +99,9 @@
         </footer>
         <!--FOOTER FIN-->
         
+
+
+<script src="../script/claseEntrevistas.js"></script>
+<script src="../script/entrevistasDetails.js"></script>        
 </body>
 </html>

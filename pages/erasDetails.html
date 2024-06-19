@@ -2,12 +2,13 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eras Detail </title>
-    <link rel="stylesheet" href="../Styles/erasDetails.css">
+    <title>eras</title>
+    <link rel="stylesheet" href="../styles/eras.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/96e2ff5d4b.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 <header>   
@@ -29,78 +30,35 @@
 
 </header>
 
-
-    
 <body>
-    <main>
-    <div class="contenedor">
-        <section class="reproductorTeaser">
-            <iframe src="https://www.youtube.com/embed/hVdsAbmKiy0?si=trb7P9mT0vhfOpQ8&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <a href="https://www.youtube.com/watch?v=RQMz4JDbtmI" target="_blank"><button class="reproducir">Reproducir cancion</button></a>
-        </section>
-    
 
-        <section class="informacionEra">
-            <article class="titulo">
-                <h2>The Tortured Poets Department</h2>
-            </article>
-            <article class="cancion">
-                <div class="coso1">
-                    <label for="opciones">Formato:</label>
-                    <select id="tiporeproduccion" name="opciones">
-                        <option value="opcion1">MV</option>
-                        <option value="opcion2">LyricVideo</option>
-                    </select>
-                </div>
-            
-                <div class="coso2">
-                    <label for="canciones">Cancion:</label>
-                    <select id="cancion" name="opciones">
-                        <option value="opcion1">Fortnight ft. Post Malone</option>
-                        <option value="opcion2">The Tortured Poets Department</option>
-                        <option value="opcion3">My Boy Only Breaks His Favorite Toys</option>
-                        <option value="opcion4">Down Bad</option>
-                        <option value="opcion5">So Long, London</option>
-                        <option value="opcion6">But Daddy I Love Him</option>
-                        <option value="opcion7">Fresh Out the Slammer</option>
-                        <option value="opcion8">Florida!!! ft Florence&The Machine</option>
-                        <option value="opcion9">Guilty as Sin?</option>
-                        <option value="opcion10">Who's Afraid Of Litlle Old Me?</option>
-                        <option value="opcion11">I Can Fix Him</option>
-                        <option value="opcion12">Loml</option>
-                        <option value="opcion13">I Can Do It With A Broken Heart</option>
-                        <option value="opcion14">The Smallest Man Who Ever Lived</option>
-                        <option value="opcion15">The Alchemy</option>
-                        <option value="opcion16">Clara Bow</option>
-                    </select>
-                </div>
-            </article>
-        <article class="genero">
-            <h3>Genero:</h3>
-            <p>Synth pop Folk-pop</p>
-        </article>
-        <article class="productores">
-            <h3>Productores:</h3>
-            <div class="nombresProductor">
-                <a href="https://en.wikipedia.org/wiki/Taylor_Swift" target="_blank">Taylor Swift</a> <a href="https://en.wikipedia.org/wiki/Jack_Antonoff" target="_blank">Jack Antonoff</a> <a href="https://en.wikipedia.org/wiki/Aaron_Dessner" target="_blank">Aaron Dessner</a> <a href="http://aaminc.com/client/patrik-berger/" target="_blank">Patrik Berger</a>
-            </div>
-        </article>
-        <article class="descripcion">
-            <p>The Tortured Poets Department se adentra en las complejidades del amor y la pérdida. A lo largo de 16 canciones, explora el viaje emocional del desamor, la sanación y el crecimiento personal. Inspirado en una ruptura dolorosa, el álbum retrata la vulnerabilidad y la fuerza que surgen al navegar la tristeza, la ira y, finalmente, encontrar la paz. Sin embargo, va más allá de un simple disco de ruptura, ya que Taylor explora temas de autodescubrimiento, resiliencia y esperanza.</p>
-        </article>
-    </section>
-    </div>
-    <div class="otros">
-        <a href="./eras.html"><h2>Otras Eras</h2></a>
-    </div>
-    <div class="paddingabajo">
-        <div class="otrasEras">
-            <a href="./erasDetails.html"><img src="../Assets/eras/Midnights_-_Taylor_Swift.png"></a>
-            <a href="./erasDetails.html"><img src="../Assets/eras/Taylor_Swift_-_Evermore.png"></a>
-            <a href="./erasDetails.html"><img src="../Assets/eras/folklore.jpg"></a>
-            <a href="./erasDetails.html"><img src="../Assets/eras/Taylor_Swift_-_Lover.png"></a>
+<main>
 
-    </main>
+
+<div class="ttpd">
+    <div class="info" >
+        <h3>THE TORTURED POETS DEPARTMENT</h3>
+        <h4>All is fair in <span>love</span> and <span>poetry</span></h4>
+    </div>
+
+    <div class="boton">
+        <a href="./erasDetails.html"><button class="anunciottpd"> Más Info.</button></a>
+
+    </div>
+
+</div>
+
+
+<div class="title">
+    <h2>Eras</h2>
+</div>
+
+<div class="paddingeras">
+    <div class="eras" id="erasMostrar">
+       
+    </div>
+    </div>
+</div>
 
     <!--FOOTER INICIO-->
     <footer class="footerPagina">
@@ -125,7 +83,8 @@
     </footer>
     <!--FOOTER FIN-->
 
-
+</main>
+<script src="../script/eras.js"></script>
 
 </body>
 </html>
