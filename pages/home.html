@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:wght@700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cutive&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/96e2ff5d4b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/flickity-docs.css">
+    <link rel="stylesheet" href="../styles/home.css">
     <title>Taylix - Home</title>
 </head>
 <body>
@@ -17,82 +17,86 @@
     <div class="main-background">
         <header class="encabezadoPagina">
             <div class="logo-container">
-                <a href="./home.html"><img class="logo" src="../Assets/home/taylix_icon.png" alt=""></a>
+                <a href="home.html"><img class="logo" src="../Assets/home/taylix_icon.png" alt=""></a>
                 <div class="fondo-buscador">
-                    <input type="text" placeholder="Buscar">
+                    <input id="searchInput" type="text" placeholder="Buscar">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
             <nav class="menuPrincipal">
                 <ul class="menuPrincipal-contenedor">
-                    <li><a href="./home.html" class="opcionMenu">Inicio</a></li>
-                    <li><a href="./eras.html" class="opcionMenu">Eras</a></li>
-                    <li><a href="./peliculas.html" class="opcionMenu">Peliculas</a></li>
-                    <li><a href="./entrevistas.html" class="opcionMenu">Entrevistas</a></li>
+                    <li><a href="home.html" class="opcionMenu">Inicio</a></li>
+                    <li><a href="eras.html" class="opcionMenu">Eras</a></li>
+                    <li><a href="peliculas.html" class="opcionMenu">Peliculas</a></li>
+                    <li><a href="entrevistas.html" class="opcionMenu">Entrevistas</a></li>
                     <li>
                         <a href="#" class="opcionMenu">Mi Cuenta</a>
                         <ul class="menu-vertical">
-                            <li><a href="./profile.html">Perfil</a></li>
+                            <li><a href="profile.html">Perfil</a></li>
                             <li><a href="../index.html">Cerrar sesión</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
         </header>
-        <img class="taylor-navbar" src="../Assets/home/taylor_background.jpg" alt="" width="100%">
-        <div class="newalbum-info">
-            <p>THE TORTURED POETS DEPARTMENT</p>
-            <p>All is fair in <span>love</span> and <span>poetry</span></p>
-            <a href="./erasDetails.html">
-                <button>Más Info.</button>
-            </a>
+
+        <div id="contenedorBanner">
+            <img class="taylor-navbar" src="../Assets/home/taylor_background.jpg" alt="" width="100%">
+            <div class="newalbum-info">
+                <p>THE TORTURED POETS DEPARTMENT</p>
+                <p>All is fair in <span>love</span> and <span>poetry</span></p>
+                <a href="erasDetails.html">
+                    <button>Más Info.</button>
+                </a>
+            </div>
         </div>
     </div>
     <!--HEADER FIN-->
 
     <!--MAIN INICIO-->
         <main class="mainPagina">
-            <section class="seccionPrincipal">
-                <div class="select-container">
-                    <a href="./eras.html"><h2 class="seccionPrincipal-Titulos">Eras</h2></a>
-                    <select class="select-box" name="selectbox" id="">
-                        <option class="select-box-opcion" value="seleccionar">Seleccione una opción</option>
-                        <option class="select-box-opcion" value="eras">Eras</option>
-                        <option class="select-box-opcion" value="peliculas">Películas</option>
-                        <option class="select-box-opcion" value="entrevistas">Entrevistas</option>
+
+            <div class="select-container">
+                <select class="select-box" name="selectbox" id="menu_desplegable">
+                    <option class="select-box-opcion" value="seleccionar">Seleccione una opción</option>
+                    <option class="select-box-opcion" value="eras">Eras</option>
+                    <option class="select-box-opcion" value="peliculas">Películas</option>
+                    <option class="select-box-opcion" value="entrevistas">Entrevistas</option>
                     </select>
+            </div>
+                    
+            <section id="seccionPrincipal" class="seccionPrincipal">
+                <div id="seccion_eras" class="contenedor-carousel">
+                    <h2><a class="seccionPrincipal-Titulos" href="eras.html">Eras</a></h2>
+                    <div id="divEras" class="carousel" data flickity>
+                    </div>
                 </div>
-                <div class="seccionPrincipal-Eras-Tapas">
-                    <a href="./erasDetails.html"><img class="imgEras" src="../Assets/home/eras/ttpd_portada.jpg" alt=""></a>
-                    <a href="./erasDetails.html"><img class="imgEras" src="../Assets/home/eras/midnights_portada.jpg" alt=""></a>
-                    <a href="./erasDetails.html"><img class="imgEras" src="../Assets/home/eras/evermore_portada.jpg" alt=""></a>
-                    <a href="./erasDetails.html"><img class="imgEras" src="../Assets/home/eras/folklore_portada.jpg" alt=""></a>
-                    <a href="./erasDetails.html"><img class="imgEras" src="../Assets/home/eras/lover_portada.jpg" alt=""></a>                 
-                    <a href="./eras.html"><button class="verMasEras"><i class="fa-solid fa-plus"></i><br><span class="verMasLetra">Ver más</span></button></a>
+
+
+                <div id="seccion_peliculas" class="contenedor-carousel">
+                    <h2><a class="seccionPrincipal-Titulos" href="peliculas.html">Películas</a></h2>
+                    <div id="divPeliculas" class="carousel-movies" data flickity>
+                    </div>
                 </div>
-                <a href="./peliculas.html"><h2 class="seccionPrincipal-Titulos">Películas</h2></a>
-                 <div class="seccionPrincipal-Peliculas-Tapas">
-                    <a href="./peliculasDetails.html"><img class="imgPeliculas" src="../Assets/home/peliculas/erastour_portada.jpg" alt=""></a>
-                    <a href="./peliculasDetails.html"><img class="imgPeliculas" src="../Assets/home/peliculas/amsterdam_portada.jpg" alt=""></a>
-                    <a href="./peliculasDetails.html"><img class="imgPeliculas" src="../Assets/home/peliculas/alltoowell_portada.jpg" alt=""></a>
-                    <a href="./peliculasDetails.html"><img class="imgPeliculas" src="../Assets/home/peliculas/folklorestudiosessions_portada.jpg" alt=""></a>
-                    <a href="./peliculas.html"><button class="verMasPeliculas"><i class="fa-solid fa-plus"></i><br><span class="verMasLetra">Ver más</span></button></a>
-                </div>
-                <a href="./entrevistas.html"><h2 class="seccionPrincipal-Titulos">Entrevistas</h2></a>
-                <div class="seccionPrincipal-Entrevistas-Tapas">
-                    <a href="./entrevistasDetails.html"><img class="imgEntrevistas" src="../Assets/home/entrevistas/directorsondirectors_entrevista.jpg" alt=""></a>
-                    <a href="./entrevistasDetails.html"><img class="imgEntrevistas" src="../Assets/home/entrevistas/ellen_entrevista.jpg" alt=""></a>
-                    <a href="./entrevistasDetails.html"><img class="imgEntrevistas" src="../Assets/home/entrevistas/sundaymorning_entrevista.jpg" alt=""></a>
-                    <a href="./entrevistasDetails.html"><img class="imgEntrevistas" src="../Assets/home/entrevistas/tonightshow_entrevista.jpg" alt=""></a>
-                    <a href="./entrevistas.html"><button class="verMasEntrevistas"><i class="fa-solid fa-plus"></i><br><span class="verMasLetra">Ver más</span></button></a>
+
+                <div id="seccion_entrevistas" class="contenedor-carousel">
+                    <h2><a class="seccionPrincipal-Titulos" href="entrevistas.html">Entrevistas</a></h2>
+                    <div id="divEntrevistas" class="carousel-interviews" data flickity>
+                    </div>
                 </div>
             </section>
         </main>
     <!--MAIN FIN-->
-            
+
     <!--FOOTER INICIO-->
     <footer class="footerPagina">
         <section class="footerContainer">
+
+            <div class="divFiltro">
+                <div id="contenedorResultados" class="resultado">
+                </div>
+            </div>
+            
             <div class="socialIcons">
                 <a href="https://www.facebook.com/TaylorSwift/?locale=es_LA" target="_blank"> <i class="fa-brands fa-facebook"></i></a>
                 <a href="https://www.instagram.com/taylorswift/" target="_blank"> <i class="fa-brands fa-instagram"></i></a>
@@ -112,5 +116,12 @@
         </div>
     </footer>
     <!--FOOTER FIN-->
+    <script src="https://kit.fontawesome.com/96e2ff5d4b.js" crossorigin="anonymous"></script>
+    <script src="../scripts/flickity-docs.min.js"></script>
+    <script src="../scripts/home_script.js"></script>
+    <script src="../scripts/cargarErasHome.js"></script>
+    <script src="../scripts/cargarPeliculasHome.js"></script>
+    <script src="../scripts/cargarEntrevistasHome.js"></script>
+    <script src="../scripts/filtroTextoHome.js"></script>
 </body>
 </html>
