@@ -283,10 +283,12 @@ header{
 
     .botones{
         display: flex;
+        flex-direction: row;
+        gap: 30px;
         width: 100%;
         align-items: center;
         justify-content: center;
-        margin-top: 15px;
+        margin-top: 20px;
 
         
     }
