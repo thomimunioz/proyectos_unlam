@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     
     
     
-    const submitButton = document.querySelector(".botones button");
+    const submitButton = document.getElementById("confirmarCambios");
+    const cerrarSesionButton = document.getElementById("cerrarSesion");
 
 
 
@@ -33,8 +34,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
+
+function cerrarSesion(){
+    localstorage.removeItem("profileImage");
+    localstorage.removeItem("tarjetaCheck");
+    localstorage.removeItem("tarjetaInput");
+    localstorage.removeItem("cvcInput");
+    localstorage.removeItem("fechaInput");
+    localstorage.removeItem("cuponCheck");
+    localstorage.removeItem("pagoFacilCheck");
+    localstorage.removeItem("rapipagoCheck");
+    localstorage.removeItem("transferenciaBancaria");
+
+}
+
+
 function cargarEstado() {
-    profileImage.src = localStorage.getItem("profileImage") || '';
+profileImage.src = localStorage.getItem("profileImage") || '';
 tarjetaCheck.checked = JSON.parse(localStorage.getItem("tarjetaCheck")) || false;
 tarjetaInput.value = localStorage.getItem("tarjetaInput") || '';
 cvcInput.value = localStorage.getItem("cvcInput") || '';
@@ -46,7 +62,7 @@ transferenciaBancaria.checked = JSON.parse(localStorage.getItem("transferenciaBa
 }
 
 function guardarEstado() {
-    localStorage.setItem("profileImage", profileImage.src);
+localStorage.setItem("profileImage", profileImage.src);
 localStorage.setItem("tarjetaCheck", JSON.stringify(tarjetaCheck.checked));
 localStorage.setItem("tarjetaInput", tarjetaInput.value);
 localStorage.setItem("cvcInput", cvcInput.value);
@@ -151,7 +167,7 @@ if (rapipagoCheck.checked) {
         const ultimoDigito = parseInt(arrayTarjeta[arrayTarjeta.length-1],10);
 
         if((suma%2 === 0 && ultimoDigito % 2 !== 0) || (suma%2 !== 0 && ultimoDigito %2 === 0)){
-            alert("Los cambios se han guardado correctamente.");
+           
         } else {
             alert("La tarjeta es inválida.");
                 isValid = false;
@@ -195,6 +211,13 @@ if (rapipagoCheck.checked) {
     submitButton.addEventListener("click", (event) => {
         event.preventDefault();
         guardarEstado();
+    });
+
+
+    cerrarSesionButton.addEventListener("click", () => {
+        cerrarSesion();
+        
+        
     });
 
     window.onload = cargarEstado;
