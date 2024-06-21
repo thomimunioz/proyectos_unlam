@@ -205,10 +205,9 @@ function validarFormulario() {
 form.addEventListener('submit', function(event) {
     if (validarFormulario()) {
         
-        localStorage.setItem('nombre', JSON.stringify(nombre.value));
+        localStorage.setItem('nombre', JSON.stringify(nombre));
         localStorage.setItem('apellido', apellido.value);
-        localStorage.setItem('email', email.value);
-   
+        localStorage.setItem('email', JSON.stringify(email));
         localStorage.setItem('contrasena', contrasena.value);
         localStorage.setItem('tarjetaNumero', tarjetaNumero.value);
         localStorage.setItem('tarjetaClave', tarjetaClave.value);

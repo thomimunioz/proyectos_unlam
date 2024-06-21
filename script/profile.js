@@ -21,10 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
         usernameDisplay.textContent = username;
     }
 
+    const email = JSON.parse(localStorage.getItem("email"));
+    const emailDisplay = document.getElementById("emailPerfil");
 
-
-
-
+    if (email) {
+        emailDisplay.textContent = email;
+    }
 
 
     const cuponCheck = document.getElementById("cuponPago");
