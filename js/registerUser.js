@@ -12,6 +12,8 @@ const confirmarBoton = document.querySelector('button.confirmar');
 const cancelarBoton = document.querySelector('button.cancelar');
 
 
+
+
 const createErrorElement = () => {
     const errorElement = document.createElement('span');
     errorElement.className = 'error';
@@ -198,6 +200,21 @@ function validarFormulario() {
 
 [nombre, apellido, email, nombreUsuario, contrasena, repetirContrasena, tarjetaNumero, tarjetaClave].forEach(campo => {
     campo.addEventListener('input', validarFormulario);
+});
+
+form.addEventListener('submit', function(event) {
+    if (validarFormulario()) {
+        
+        localStorage.setItem('nombre', nombre.value);
+        localStorage.setItem('apellido', apellido.value);
+        localStorage.setItem('email', email.value);
+        localStorage.setItem('nombreUsuario', nombreUsuario.value);
+        localStorage.setItem('contrasena', contrasena.value);
+        localStorage.setItem('tarjetaNumero', tarjetaNumero.value);
+        localStorage.setItem('tarjetaClave', tarjetaClave.value);
+    } else {
+        event.preventDefault(); 
+    }
 });
 
 
