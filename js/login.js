@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         
-        localStorage.setItem("usuario", usuario);
+        
 
         
         window.location.href = "../pages/home.html";  

@@ -14,6 +14,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const submitButton = document.getElementById("confirmarCambios");
     const cerrarSesionButton = document.getElementById("cerrarSesion");
 
+    const username = JSON.parse(localStorage.getItem("usuario"));
+    const usernameDisplay = document.getElementById("usuarioPerfil");
+
+    if (username) {
+        usernameDisplay.textContent = username;
+    }
+
+
+
+
 
 
 
@@ -27,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const iconElements = document.querySelectorAll(".seleccion img");
     const profileImage = document.querySelector(".fotoPerfil .grande img");
 
+
+    
     iconElements.forEach(icon => {
         icon.addEventListener("click", () => {
             profileImage.src = icon.src;
@@ -36,20 +48,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function cerrarSesion(){
-    localstorage.removeItem("profileImage");
-    localstorage.removeItem("tarjetaCheck");
-    localstorage.removeItem("tarjetaInput");
-    localstorage.removeItem("cvcInput");
-    localstorage.removeItem("fechaInput");
-    localstorage.removeItem("cuponCheck");
-    localstorage.removeItem("pagoFacilCheck");
-    localstorage.removeItem("rapipagoCheck");
-    localstorage.removeItem("transferenciaBancaria");
+    localStorage.removeItem("profileImage");
+    localStorage.removeItem("tarjetaCheck");
+    localStorage.removeItem("tarjetaInput");
+    localStorage.removeItem("cvcInput");
+    localStorage.removeItem("fechaInput");
+    localStorage.removeItem("cuponCheck");
+    localStorage.removeItem("pagoFacilCheck");
+    localStorage.removeItem("rapipagoCheck");
+    localStorage.removeItem("transferenciaBancaria");
 
 }
 
 
 function cargarEstado() {
+usuarioPerfil.value = JSON.parse(localStorage.getItem("usuario")) || '';
 profileImage.src = localStorage.getItem("profileImage") || '';
 tarjetaCheck.checked = JSON.parse(localStorage.getItem("tarjetaCheck")) || false;
 tarjetaInput.value = localStorage.getItem("tarjetaInput") || '';
@@ -60,6 +73,7 @@ pagoFacilCheck.checked = JSON.parse(localStorage.getItem("pagoFacilCheck")) || f
 rapipagoCheck.checked = JSON.parse(localStorage.getItem("rapipagoCheck")) || false;
 transferenciaBancaria.checked = JSON.parse(localStorage.getItem("transferenciaBancaria")) || false;
 }
+
 
 function guardarEstado() {
 localStorage.setItem("profileImage", profileImage.src);
@@ -91,11 +105,6 @@ if (!cuponCheck.checked) {
 }
 
 
-function permitirSoloUnaOpcion() {
-if (pagoFacilCheck.checked && rapipagoCheck.checked) {
-    rapipagoCheck.checked = false;
-}
-}
 
 
 [tarjetaCheck, cuponCheck, transferenciaBancaria].forEach(chk => {
@@ -201,10 +210,10 @@ if (rapipagoCheck.checked) {
     });
 
     
-    const usernameInput = document.querySelector(".infoPerfil input[type='text']");
-    usernameInput.addEventListener("change", () => {
-        console.log(`Nuevo nombre de usuario: ${usernameInput.value}`);
-    });
+
+
+
+
 
 
 
@@ -216,7 +225,6 @@ if (rapipagoCheck.checked) {
 
     cerrarSesionButton.addEventListener("click", () => {
         cerrarSesion();
-        
         
     });
 

@@ -205,13 +205,14 @@ function validarFormulario() {
 form.addEventListener('submit', function(event) {
     if (validarFormulario()) {
         
-        localStorage.setItem('nombre', nombre.value);
+        localStorage.setItem('nombre', JSON.stringify(nombre.value));
         localStorage.setItem('apellido', apellido.value);
         localStorage.setItem('email', email.value);
-        localStorage.setItem('nombreUsuario', nombreUsuario.value);
+   
         localStorage.setItem('contrasena', contrasena.value);
         localStorage.setItem('tarjetaNumero', tarjetaNumero.value);
         localStorage.setItem('tarjetaClave', tarjetaClave.value);
+        localStorage.setItem("usuario", JSON.stringify(usuario));
     } else {
         event.preventDefault(); 
     }
