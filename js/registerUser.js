@@ -202,26 +202,24 @@ function validarFormulario() {
     campo.addEventListener('input', validarFormulario);
 });
 
-form.addEventListener('submit', function(event) {
-    if (validarFormulario()) {
-        
-        localStorage.setItem('nombre', nombre.value);
-        localStorage.setItem('apellido', apellido.value);
-        localStorage.setItem('email', email.value);
-        localStorage.setItem('nombreUsuario', nombreUsuario.value);
-        localStorage.setItem('contrasena', contrasena.value);
-        localStorage.setItem('tarjetaNumero', tarjetaNumero.value);
-        localStorage.setItem('tarjetaClave', tarjetaClave.value);
-    } else {
-        event.preventDefault(); 
-    }
-});
-
 
 form.addEventListener('submit', function(event) {
-    if (!validarFormulario()) {
-        event.preventDefault();
-    }
+    event.preventDefault(); 
+    
+    const usuarioData = {
+        nombre: nombre.value,
+        apellido: apellido.value,
+        email: email.value,
+        nombreUsuario: nombreUsuario.value,
+        contrasena: contrasena.value,
+        tarjetaNumero: tarjetaNumero.value,
+        tarjetaClave: tarjetaClave.value
+    };
+    
+    localStorage.setItem('usuarioData', JSON.stringify(usuarioData));
+    
+   
+    window.location.href = 'home.html';
 });
 
 
