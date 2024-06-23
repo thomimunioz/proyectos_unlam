@@ -8,7 +8,7 @@ const contrasena = document.querySelector('input[placeholder="Ingrese contraseñ
 const repetirContrasena = document.querySelector('input[placeholder="Repetir contraseña"]');
 const tarjetaNumero = document.querySelector('input[placeholder="Número de la tarjeta"]');
 const tarjetaClave = document.querySelector('input[placeholder="XXX"]');
-const confirmarBoton = document.querySelector('button.confirmar');
+const confirmarBoton = document.getElementById('confirmarBoton');
 const cancelarBoton = document.querySelector('button.cancelar');
 
 
@@ -203,10 +203,8 @@ function validarFormulario() {
 });
 
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault(); 
-    
-    const usuarioData = {
+const guardarDatosEnLocalStorage = () => {
+    const datosUsuario = {
         nombre: nombre.value,
         apellido: apellido.value,
         email: email.value,
@@ -215,11 +213,17 @@ form.addEventListener('submit', function(event) {
         tarjetaNumero: tarjetaNumero.value,
         tarjetaClave: tarjetaClave.value
     };
-    
-    localStorage.setItem('usuarioData', JSON.stringify(usuarioData));
-    
-    
-    window.location.href = 'home.html';
+
+    localStorage.setItem('datosUsuario', JSON.stringify(datosUsuario));
+};
+
+confirmarBoton.addEventListener('click', function(event) {
+    if (validarFormulario()) {
+        guardarDatosEnLocalStorage();
+        window.location.href = "home.html";
+    } else {
+        event.preventDefault();
+    }
 });
 
 
