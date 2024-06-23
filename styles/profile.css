@@ -85,6 +85,10 @@ header{
 
     }
 
+    .titulo-mobile{
+        display:none;
+    }
+
     .fotoPerfil{
         grid-area: uno;
         display: flex;
@@ -363,17 +367,237 @@ header{
 
     }
 
-    @media  screen and (max-width:1024px) and (min-width:600px){
+    @media  screen and (max-width:600px) {
+
+        header{
+            position: absolute;
+            top: 0;
+            background: #cac2b5;
+            display: flex;
+            align-items: center;
+            justify-content:space-between;
+            z-index: 100;
+            
+            }
         
         body{
-            background-image: url(../Assets/indexTabletBack.jpg);
+            background-image: url(../Assets/index/indexMobileBack.jpg);
             background-size:cover;
             background-position:center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
          }
 
+         .contenedorPerfil{
+            position: relative;
+            display: grid;
+            grid-template-areas: "uno uno"
+                                 "dos dos"
+                                 "tres tres"
+                                 "cuatro cuatro";
+            border: 2px solid #625548;
+            border-radius: 20px;
+            background-color: #cac2b5;
+            color: #625548;
+            padding-left: 30px;
+            padding-right: 30px;
+            box-shadow: #625548;
+            justify-content: center;
+            align-items: center;
+            margin-top: 250px;
+            margin-bottom: 10px;
+    
+        }
+
+
+        .titulo-mobile{
+            grid-area: uno;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+     
+        }
+
+
+        .fotoPerfil{
+            grid-area: dos;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0%;
+            margin: 0;
+        }
+
+        .infoPerfil{
+            grid-area: tres;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .infoPerfil h1{
+            display: none;
+        }
+
+        .email-y-contraseña{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .email{
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items: center;
+        }
+
+
+        .contraseña{
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items: center;
+
+        }
+        .medioDePago{
+            grid-area: cuatro;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+    
         
+        .formaPago{
+            display: flex;
+            flex-direction: column ;
+            margin-top: 10px;
+            width: 100%;
+            justify-content: center;
+    
+        }
+    
+    
+        .tarjeta{
+            display: grid;
+            grid-template-areas: "uno uno"
+                                 "dos dos"
+                                 "tres cuatro";
+            grid-template-columns: repeat(2, 1fr);
+            font-size: 20px;
+    
+        }
+
+        .tarjeta .inputUno{
+            grid-area: uno;
+            margin-bottom: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .tarjeta .inputDos{
+            display: flex;
+            grid-area: dos;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    
+        .inputDos input{
+            border-radius: 20px;
+            width: 100%;
+            text-align: center;
+        }
+    
+        .tarjeta .inputTres{
+            display: flex;
+            grid-area: tres;
+            align-items:center;
+            justify-content: left;
+            margin-bottom: 10px;
+            
+        }
+    
+        .inputTres input{
+            border-radius: 20px;
+            text-align: center;
+            width: 50px;
+    
+        }
+    
+        .tarjeta .inputCuatro{
+            display: flex;
+            grid-area: cuatro;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    
+        .inputCuatro input{
+            border-radius: 20px;
+            text-align: center;
+            width: fit-content;
+    
+        }
+        .formaPago .cuponPago{
+            grid-area: dos;
+            display: flex;
+            flex-direction: column;
+            margin: 0%;
+            font-size: 20px;
+            
+        
+        }
+    
+        .cuponPago .metodos{
+           display: flex;
+           flex-direction: row;
+           justify-content: center;
+           align-items: center;
+           gap: 10px;
+           margin-top: 5px;
+           margin-bottom: 7px;
+        }
+    
+        .transferencia{
+            grid-area: tres;
+            display: flex;
+            flex-direction: column;
+            margin: 0%;
+            margin-top: 5px;
+            font-size: 20px;
+           
+        }
+    
+        .transferencia p{
+            margin-top: 10px;
+        }
+    
+    
+        
+    
+        .botones{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+    
+            
+        }
+
+
 
 
     }
