@@ -218,7 +218,7 @@ form.addEventListener('submit', function(event) {
     
     localStorage.setItem('usuarioData', JSON.stringify(usuarioData));
     
-   
+    
     window.location.href = 'home.html';
 });
 
