@@ -63,18 +63,13 @@ a {
   display: flex;
   justify-self: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 250px;
+  height: 50px;
   margin-left: 20px;
   background-color: transparent;
   border-radius: 8px;
   padding: 10px 20px;
-  transition: 0.5s ease-in-out;
   color: #cfc9be;
-}
-
-.fondo-buscador:hover {
-  width: 300px;
   border-style: solid;
   border-color: #cfc9be;
 }
@@ -611,6 +606,52 @@ margin-top: 20px;
   color: white;
 }
 
+@media screen and (min-width: 600px) and (max-width: 1350px){
+  .encabezadoPagina {
+    position: absolute;
+    top: 0;
+    display: block;
+    padding-left: 0;
+    padding-top: 15px;
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+  }
+
+  .menuPrincipal{
+    justify-content: center;
+    margin-top: 5px;
+  }
+
+  .menuPrincipal-contenedor{
+    overflow: hidden;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: flex-start;
+    margin-right: 50px;
+  }
+
+  .newalbum-info {
+    position: absolute;
+    bottom: 10%;
+    width: 400px;
+    text-align: center;
+  }
+
+  .taylor-navbar{
+    height: 500px;
+    object-fit: cover;
+  }
+
+  .newalbum-info p{
+    font-size: 30px;
+  }
+
+}
+
 @media screen and (max-width:600px) {
 
   .encabezadoPagina {
@@ -647,7 +688,7 @@ margin-top: 20px;
   
   .opcionMenu {
     font-size: 15px;
-    padding: 5px;
+    padding: 3px;
   }
 
   .menu-vertical {
@@ -677,8 +718,8 @@ margin-top: 20px;
 
   .select-container{
     display: flex;
-    justify-content: space-between;
-    margin-right: 25px;
+    justify-content: right;
+    margin-right: 20px;
     align-items: center;
   }
   
