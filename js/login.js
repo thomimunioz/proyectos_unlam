@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const contraseñaInput = loginForm.querySelector("input[type='password']");
 
     loginBoton.addEventListener("click", function (event) {
-        event.preventDefault(); 
+        event.preventDefault();
 
         const usuario = usuarioInput.value.trim();
         const contraseña = contraseñaInput.value.trim();
@@ -16,10 +16,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         
-        const datosUsuarios = JSON.parse(localStorage.getItem('datosUsuario')) || [];
+        const datosUsuario = JSON.parse(localStorage.getItem('datosUsuario'));
+
+        if (!datosUsuario) {
+            alert("No hay usuarios registrados. Por favor, regístrese primero.");
+            return;
+        }
 
         
-        const usuarioRegistrado = datosUsuarios.find(user => user.nombreUsuario === usuario && user.contrasena === contraseña);
+        const usuarioRegistrado = datosUsuario.nombreUsuario === usuario && datosUsuario.contrasena === contraseña;
 
         if (!usuarioRegistrado) {
             alert("Usuario o contraseña incorrectos. Por favor, intente de nuevo.");
@@ -27,6 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         
-        window.location.href = "../pages/home.html";  
+        window.location.href = "../pages/home.html";
     });
 });

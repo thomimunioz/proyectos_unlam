@@ -159,6 +159,15 @@ header a img{
     color: #625548;
 }
 
+.error {
+    display: block;
+    color: red;
+    position: absolute;
+    padding: 2px; 
+    z-index: 10; 
+    white-space: normal; 
+}
+
 @media  screen and (max-width: 600px)  {
 
     body{

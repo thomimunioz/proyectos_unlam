@@ -10,6 +10,10 @@ const tarjetaNumero = document.querySelector('input[placeholder="Número de la t
 const tarjetaClave = document.querySelector('input[placeholder="XXX"]');
 const confirmarBoton = document.getElementById('confirmarBoton');
 const cancelarBoton = document.querySelector('button.cancelar');
+const cuponPagoRadio = document.getElementById('cupon_pago');
+const pagoFacilRadio = document.getElementById('pago_facil');
+const rapipagoRadio = document.getElementById('rapipago');
+const metodoPagoRadios = document.getElementsByName('metodo_pago');
 
 
 
@@ -158,7 +162,7 @@ function validarFormulario() {
         mostrarError(contrasenaError, 'La contraseña es requerida.');
         esValido = false;
     } else if (!esContrasenaValida(contrasena.value)) {
-        mostrarError(contrasenaError, '8 car. 2 l. 2 n. 2 car.esp.');
+        mostrarError(contrasenaError, '8 caracteres, 2 letras, 2 números y 2 caracteres especiales.');
         esValido = false;
     } else {
         ocultarError(contrasenaError);
@@ -229,4 +233,26 @@ confirmarBoton.addEventListener('click', function(event) {
 
 document.addEventListener('DOMContentLoaded', () => {
     confirmarBoton.disabled = true;
+});
+cuponPagoRadio.addEventListener('change', function() {
+    if (cuponPagoRadio.checked) {
+        pagoFacilRadio.disabled = false;
+        rapipagoRadio.disabled = false;
+    } else {
+        pagoFacilRadio.disabled = true;
+        rapipagoRadio.disabled = true;
+        pagoFacilRadio.checked = false;
+        rapipagoRadio.checked = false;
+    }
+});
+
+metodoPagoRadios.forEach(radio => {
+    radio.addEventListener('change', function() {
+        if (!cuponPagoRadio.checked) {
+            pagoFacilRadio.disabled = true;
+            rapipagoRadio.disabled = true;
+            pagoFacilRadio.checked = false;
+            rapipagoRadio.checked = false;
+        }
+    });
 });
