@@ -174,3 +174,8 @@ function mostrarEras() {
 mostrarEras()
 localStorage.setItem('eras', JSON.stringify(ERAS));
 
+const btnCerrarSesion = document.getElementById('btnCerrarSesion')
+
+btnCerrarSesion.addEventListener('click',() => {
+    localStorage.removeItem('datosUsuario')
+} )

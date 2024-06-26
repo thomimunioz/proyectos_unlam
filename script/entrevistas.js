@@ -119,3 +119,9 @@ function mostrarEntrevistas(){
 
 mostrarEntrevistas()
 localStorage.setItem('entrevistas',JSON.stringify(ENTREVISTAS))
+
+const btnCerrarSesion = document.getElementById('btnCerrarSesion')
+
+btnCerrarSesion.addEventListener('click',() => {
+    localStorage.removeItem('datosUsuario')
+} )

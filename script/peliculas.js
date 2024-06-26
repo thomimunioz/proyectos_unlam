@@ -161,3 +161,9 @@ function mostrarPeliculas(){
 
 mostrarPeliculas()
 localStorage.setItem('peliculas',JSON.stringify(PELICULAS))
+
+const btnCerrarSesion = document.getElementById('btnCerrarSesion')
+
+btnCerrarSesion.addEventListener('click',() => {
+    localStorage.removeItem('datosUsuario')
+} )

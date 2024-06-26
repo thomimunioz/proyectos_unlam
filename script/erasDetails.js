@@ -85,3 +85,9 @@ if (ERAS) {
 } else {
     console.error('No se encontro informacion en LocalStorage.');
 }
+
+const btnCerrarSesion = document.getElementById('btnCerrarSesion')
+
+btnCerrarSesion.addEventListener('click',() => {
+    localStorage.removeItem('datosUsuario')
+} )
