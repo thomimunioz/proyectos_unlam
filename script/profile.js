@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const iconElements = document.querySelectorAll(".seleccion img");
     const profileImage = document.querySelector(".fotoPerfil .grande img");
-
+    const emailAMostrar = document.getElementById("emailColocar")
     const nombreActual = document.getElementById("nombreUsuarioAColocar");
     const nombreUsuarioNuevo = document.getElementById("nuevoUsuario");
 
@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         transferenciaBancaria.checked = datosUsuario.transferenciaBancaria || false;
         nombreActual.textContent = datosUsuario.nombreUsuario || '';
         nombreUsuarioNuevo.value = datosUsuario.nombreUsuario || '';
+        emailAMostrar.textContent = datosUsuario.email;
     }
 
     function guardarEstado() {
