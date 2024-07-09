@@ -58,8 +58,55 @@ header{
     width: 100%;
 }
 
+.mi-cuenta-container {
+  position: relative;
+  display: inline-block;
+}
+
+.opciones-cuenta {
+  display: none;
+  position: absolute;
+  top: 120%; 
+  left: 0;
+  background-color: rgba(207, 201, 190);
+  text-align: center; 
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.mi-cuenta-container:hover .opciones-cuenta {
+  display: block;
+}
+
+.opciones-cuenta a {
+  display: block;
+  text-decoration: none;
+  font-family: "Bebas Neue";
+  font-size: 18px;
+  color: #625548;
+  font-weight: 600;
+  padding: 10px 0; 
+  position: relative; 
+}
+
+.opciones-cuenta a::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #625548;
+  transition: .3s;
+}
+
+.opciones-cuenta a:hover::before {
+  width: 100%;
+}
+
+
 .title{
-    margin-top: 6.8%;
+    margin-top: 12%;
     margin-bottom: 2.5%;
     margin-left: 3%;
     h2{
@@ -182,6 +229,10 @@ header{
         gap: 3%;
         justify-content: right;
     }
+
+    .opciones-cuenta {
+      top: 190%; 
+  }
 
     .title{
         margin-top: 28%;
