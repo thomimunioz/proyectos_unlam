@@ -38,3 +38,9 @@ if (PELICULAS) {
 }else {
     console.error('No se encontro informacion en LocalStorage')
 }
+
+const btnCerrarSesion = document.getElementById('btnCerrarSesion')
+
+btnCerrarSesion.addEventListener('click',() => {
+    localStorage.removeItem('usuarioLogueado')
+} )
