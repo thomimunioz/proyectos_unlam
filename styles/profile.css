@@ -19,54 +19,97 @@ body{
 
 
 header{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #cac2b5;
     display: flex;
+    width: 100%;
+    height: 12%;
+    background-color: rgba(207, 201, 190);
+    position: fixed;
+    top:0;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     z-index: 100;
-    
-    }
-    
-    .contenedorHeader img{
-        width: 100px;
-        height: auto;
-        margin-left: 30px;
-        margin-top: 10px;
-    }
-    
-    .menu-icon{
-        display: none;
-    }
-    .menu a{
-        position: relative;
-        text-decoration: none;
-        font-family: "Bebas Neue";
-        font-size: 20px;
-        color: #625548;
-        margin-left: 20px;
-        margin-right: 20px;
-        font-weight: 600;
-    
-    }
-    
-    .menu a::before{
-        content: '';
-        position: absolute;
-        top:100%;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: #625548;
-        transition: .3s;
-    
-    }
-    
-    .menu a:hover::before{
-        width: 100%;
-    }
+}
+
+.contenedorHeader img{
+    width: 100px;
+    height: auto;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.navegacion a{
+    position: relative;
+    text-decoration: none;
+    font-family: "Bebas Neue";
+    font-size: 20px;
+    color: #625548;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: 600;
+}
+
+.navegacion a::before{
+    content: '';
+    position: absolute;
+    top:100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #625548;
+    transition: .3s;
+}
+
+.navegacion a:hover::before{
+    width: 100%;
+}
+
+/*aca empieza el header*/
+
+.mi-cuenta-container {
+  position: relative;
+  display: inline-block;
+}
+
+.opciones-cuenta {
+  display: none;
+  position: absolute;
+  top: 120%; 
+  left: 0;
+  background-color: rgba(207, 201, 190);
+  text-align: center; 
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.mi-cuenta-container:hover .opciones-cuenta {
+  display: block;
+}
+
+.opciones-cuenta a {
+  display: block;
+  text-decoration: none;
+  font-family: "Bebas Neue";
+  font-size: 18px;
+  color: #625548;
+  font-weight: 600;
+  padding: 10px 0; 
+  position: relative; 
+}
+
+.opciones-cuenta a::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #625548;
+  transition: .3s;
+}
+
+.opciones-cuenta a:hover::before {
+  width: 100%;
+}
 
 
 
@@ -335,33 +378,21 @@ header{
         background-color: transparent;
     }
 
-    .contenedorHeader{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: auto;
-        width: 100%;
-
-
-    }
-
     .contenedorHeader img{
+        width: 80px;
+    }
+
+    .navegacion {
         display: flex;
-        margin-left: 0;
-
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3%;
+        justify-content: right;
     }
 
-
-    .menu-icon{
-        display: flex;
-        
-
-    }
-
-    .menu{
-    display: none;
-
-    }
+    .opciones-cuenta {
+      top: 190%; 
+  }
 
 
 
