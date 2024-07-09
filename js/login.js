@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     const loginForm = document.querySelector(".Contenedor form");
     const loginBoton = document.querySelector(".boton");
@@ -15,23 +16,27 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        
-        const datosUsuario = JSON.parse(localStorage.getItem('datosUsuario'));
+        const datosUsuarios = JSON.parse(localStorage.getItem('datosUsuario'));
 
-        if (!datosUsuario) {
+        if (!datosUsuarios) {
             alert("No hay usuarios registrados. Por favor, regístrese primero.");
             return;
         }
 
-        
-        const usuarioRegistrado = datosUsuario.nombreUsuario === usuario && datosUsuario.contrasena === contraseña;
+        const usuarioEncontrado = datosUsuarios.find(user => user.nombreUsuario === usuario);
+        const contraseñaCorrecta = usuarioEncontrado && usuarioEncontrado.contrasena === contraseña;
 
-        if (!usuarioRegistrado) {
-            alert("Usuario o contraseña incorrectos. Por favor, intente de nuevo.");
+        if (!usuarioEncontrado) {
+            alert("Nombre de usuario incorrecto. Por favor, intente de nuevo.");
             return;
         }
 
-        
+        if (!contraseñaCorrecta) {
+            alert("Contraseña incorrecta. Por favor, intente de nuevo.");
+            return;
+        }
+
+        localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioEncontrado));
         window.location.href = "../pages/home.html";
     });
 });

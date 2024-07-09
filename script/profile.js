@@ -15,52 +15,84 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const iconElements = document.querySelectorAll(".seleccion img");
     const profileImage = document.querySelector(".fotoPerfil .grande img");
-    const emailAMostrar = document.getElementById("emailColocar")
+    const emailAMostrar = document.getElementById("emailColocar");
     const nombreActual = document.getElementById("nombreUsuarioAColocar");
     const nombreUsuarioNuevo = document.getElementById("nuevoUsuario");
+
+    let usuarioLogueado = {};
+    let datosUsuarios = [];
 
     iconElements.forEach(icon => {
         icon.addEventListener("click", () => {
             profileImage.src = icon.src;
-            submitButton.disabled = false; // Habilitar el botón al cambiar la foto de perfil
+            submitButton.disabled = false; 
         });
     });
 
     function cerrarSesion() {
-        localStorage.removeItem("datosUsuario");
+        
+        const confirmacion = confirm("¿Está seguro que quiere eliminar su cuenta?");
+    
+        if (confirmacion) {
+            const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+            let datosUsuarios = JSON.parse(localStorage.getItem("datosUsuario")) || [];
+    
+            
+            const index = datosUsuarios.findIndex(user => user.email === usuarioLogueado.email);
+    
+            if (index !== -1) {
+                
+                datosUsuarios.splice(index, 1);
+                
+                localStorage.setItem("datosUsuario", JSON.stringify(datosUsuarios));
+            }
+    
+            
+            localStorage.removeItem("usuarioLogueado");
+    
+            
+            window.location.href = "../index.html";
+        }
     }
 
     function cargarEstado() {
-        const datosUsuario = JSON.parse(localStorage.getItem("datosUsuario")) || {};
-        profileImage.src = datosUsuario.profileImage || '';
-        tarjetaCheck.checked = datosUsuario.tarjetaCheck || false;
-        tarjetaInput.value = datosUsuario.tarjetaInput || '';
-        cvcInput.value = datosUsuario.cvcInput || '';
-        fechaInput.value = datosUsuario.fechaInput || '';
-        cuponCheck.checked = datosUsuario.cuponCheck || false;
-        pagoFacilCheck.checked = datosUsuario.pagoFacilCheck || false;
-        rapipagoCheck.checked = datosUsuario.rapipagoCheck || false;
-        transferenciaBancaria.checked = datosUsuario.transferenciaBancaria || false;
-        nombreActual.textContent = datosUsuario.nombreUsuario || '';
-        nombreUsuarioNuevo.value = datosUsuario.nombreUsuario || '';
-        emailAMostrar.textContent = datosUsuario.email;
+        usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado")) || {};
+        datosUsuarios = JSON.parse(localStorage.getItem("datosUsuario")) || [];
+        
+        profileImage.src = usuarioLogueado.profileImage || '';
+        tarjetaCheck.checked = usuarioLogueado.tarjetaCheck || false;
+        tarjetaInput.value = usuarioLogueado.tarjetaInput || '';
+        cvcInput.value = usuarioLogueado.cvcInput || '';
+        fechaInput.value = usuarioLogueado.fechaInput || '';
+        cuponCheck.checked = usuarioLogueado.cuponCheck || false;
+        pagoFacilCheck.checked = usuarioLogueado.pagoFacilCheck || false;
+        rapipagoCheck.checked = usuarioLogueado.rapipagoCheck || false;
+        transferenciaBancaria.checked = usuarioLogueado.transferenciaBancaria || false;
+        nombreActual.textContent = usuarioLogueado.nombreUsuario || '';
+        nombreUsuarioNuevo.value = usuarioLogueado.nombreUsuario || '';
+        emailAMostrar.textContent = usuarioLogueado.email;
+
+        submitButton.disabled = true; 
     }
 
     function guardarEstado() {
-        const datosUsuario = JSON.parse(localStorage.getItem("datosUsuario")) || {};
+        const index = datosUsuarios.findIndex(user => user.email === usuarioLogueado.email);
 
-        datosUsuario.profileImage = profileImage.src;
-        datosUsuario.tarjetaCheck = tarjetaCheck.checked;
-        datosUsuario.tarjetaInput = tarjetaInput.value;
-        datosUsuario.cvcInput = cvcInput.value;
-        datosUsuario.fechaInput = fechaInput.value;
-        datosUsuario.cuponCheck = cuponCheck.checked;
-        datosUsuario.pagoFacilCheck = pagoFacilCheck.checked;
-        datosUsuario.rapipagoCheck = rapipagoCheck.checked;
-        datosUsuario.transferenciaBancaria = transferenciaBancaria.checked;
-        datosUsuario.nombreUsuario = nombreUsuarioNuevo.value;
+        usuarioLogueado.profileImage = profileImage.src;
+        usuarioLogueado.tarjetaCheck = tarjetaCheck.checked;
+        usuarioLogueado.tarjetaInput = tarjetaInput.value;
+        usuarioLogueado.cvcInput = cvcInput.value;
+        usuarioLogueado.fechaInput = fechaInput.value;
+        usuarioLogueado.cuponCheck = cuponCheck.checked;
+        usuarioLogueado.pagoFacilCheck = pagoFacilCheck.checked;
+        usuarioLogueado.rapipagoCheck = rapipagoCheck.checked;
+        usuarioLogueado.transferenciaBancaria = transferenciaBancaria.checked;
+        usuarioLogueado.nombreUsuario = nombreUsuarioNuevo.value;
 
-        localStorage.setItem("datosUsuario", JSON.stringify(datosUsuario));
+        datosUsuarios[index] = usuarioLogueado;
+
+        localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
+        localStorage.setItem("datosUsuario", JSON.stringify(datosUsuarios));
     }
 
     function desmarcarOtrosExceptoCupon(checkbox) {
@@ -85,13 +117,31 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function verificarNombreUsuario() {
+        const nuevoNombreUsuario = nombreUsuarioNuevo.value.trim();
+        if (nuevoNombreUsuario === usuarioLogueado.nombreUsuario) {
+            submitButton.disabled = true;
+            alert("El nuevo nombre de usuario no puede ser igual al anterior.");
+            return;
+        }
+
+        const nombreUsuarioExistente = datosUsuarios.some(user => user.nombreUsuario === nuevoNombreUsuario);
+        if (nombreUsuarioExistente) {
+            submitButton.disabled = true;
+            alert("El nombre de usuario ya está en uso. Por favor, elija otro.");
+            return;
+        }
+
+        submitButton.disabled = false;
+    }
+
     [tarjetaCheck, cuponCheck, transferenciaBancaria].forEach(chk => {
         chk.addEventListener('change', () => {
             if (chk.checked) {
                 desmarcarOtrosExceptoCupon(chk);
             }
             desmarcarRapipagoYPagoFacil();
-            submitButton.disabled = false; // Habilitar el botón al cambiar la forma de pago
+            submitButton.disabled = false; 
         });
     });
 
@@ -99,18 +149,18 @@ document.addEventListener("DOMContentLoaded", () => {
         if (pagoFacilCheck.checked) {
             rapipagoCheck.checked = false;
         }
-        submitButton.disabled = false; // Habilitar el botón al cambiar la opción de pago fácil
+        submitButton.disabled = false; 
     });
 
     rapipagoCheck.addEventListener('change', () => {
         if (rapipagoCheck.checked) {
             pagoFacilCheck.checked = false;
         }
-        submitButton.disabled = false; // Habilitar el botón al cambiar la opción de rapipago
+        submitButton.disabled = false; 
     });
 
     nombreUsuarioNuevo.addEventListener('input', () => {
-        submitButton.disabled = false; // Habilitar el botón al cambiar el nombre de usuario
+        verificarNombreUsuario();
     });
 
     submitButton.addEventListener("click", (event) => {
@@ -155,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const ultimoDigito = parseInt(arrayTarjeta[arrayTarjeta.length - 1], 10);
 
             if ((suma % 2 === 0 && ultimoDigito % 2 !== 0) || (suma % 2 !== 0 && ultimoDigito % 2 === 0)) {
-                // La tarjeta es válida
+               
             } else {
                 alert("La tarjeta es inválida.");
                 isValid = false;
@@ -164,9 +214,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (isValid) {
             guardarEstado();
-            nombreActual.textContent = nombreUsuarioNuevo.value; // Actualizar el nombre de usuario mostrado
+            nombreActual.textContent = nombreUsuarioNuevo.value; 
             alert("Los cambios se han guardado correctamente.");
-            submitButton.disabled = true; // Deshabilitar el botón después de guardar los cambios
+            submitButton.disabled = true; 
         }
     });
 
@@ -175,4 +225,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.onload = cargarEstado;
+
+    const btnCerrarSesion = document.getElementById('btnCerrarSesion')
+
+    btnCerrarSesion.addEventListener('click',() => {
+        localStorage.removeItem('usuarioLogueado')
+    } )
+
 });
