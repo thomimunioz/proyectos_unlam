@@ -113,7 +113,7 @@ header{
     width: 94%;
     display:grid;
     grid-template-columns: 2fr 3fr;
-    margin-top: 6.8%;
+    margin-top: 12%;
     padding:3%;
     gap:1%;
     border:3px solid #625548;
