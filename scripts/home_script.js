@@ -23,3 +23,9 @@ menuDesplegable.addEventListener('change', function(){
         seccionEntrevistas.classList.remove('hide');
     }
 })
+
+const btnCerrarSesion = document.getElementById('btnCerrarSesion')
+
+btnCerrarSesion.addEventListener('click',() => {
+    localStorage.removeItem('usuarioLogueado')
+} )

@@ -1,5 +1,3 @@
-
-
 const form = document.querySelector('.register-box');
 const nombre = document.querySelector('input[placeholder="Ingrese nombre"]');
 const apellido = document.querySelector('input[placeholder="Ingrese apellido"]');
@@ -15,6 +13,7 @@ const cuponPagoRadio = document.getElementById('cupon_pago');
 const pagoFacilRadio = document.getElementById('pago_facil');
 const rapipagoRadio = document.getElementById('rapipago');
 const metodoPagoRadios = document.getElementsByName('metodo_pago');
+
 
 const createErrorElement = () => {
     const errorElement = document.createElement('span');
@@ -47,6 +46,7 @@ tarjetaNumero.parentNode.appendChild(tarjetaNumeroError);
 
 const tarjetaClaveError = createErrorElement();
 tarjetaClave.parentNode.appendChild(tarjetaClaveError);
+
 
 function soloLetras(cadena) {
     return /^[A-Za-z]+$/.test(cadena);
@@ -137,6 +137,9 @@ function validarFormulario() {
     } else if (!esEmailValido(email.value)) {
         mostrarError(emailError, 'El email no es válido.');
         esValido = false;
+    } else if (esEmailDuplicado(email.value)) {
+        mostrarError(emailError, 'El email ya está en uso.');
+        esValido = false;
     } else {
         ocultarError(emailError);
     }
@@ -146,6 +149,9 @@ function validarFormulario() {
         esValido = false;
     } else if (!esNombreUsuarioValido(nombreUsuario.value)) {
         mostrarError(nombreUsuarioError, 'El usuario solo puede contener letras y números.');
+        esValido = false;
+    } else if (esNombreUsuarioDuplicado(nombreUsuario.value)) {
+        mostrarError(nombreUsuarioError, 'El nombre de usuario ya está en uso.');
         esValido = false;
     } else {
         ocultarError(nombreUsuarioError);
@@ -185,24 +191,11 @@ function validarFormulario() {
         ocultarError(tarjetaClaveError);
     }
 
-    if (email.value.trim() && esEmailDuplicado(email.value)) {
-        mostrarError(emailError, 'El email ya está en uso.');
-        esValido = false;
-    } else {
-        ocultarError(emailError);
-    }
-
-    if (nombreUsuario.value.trim() && esNombreUsuarioDuplicado(nombreUsuario.value)) {
-        mostrarError(nombreUsuarioError, 'El nombre de usuario ya está en uso.');
-        esValido = false;
-    } else {
-        ocultarError(nombreUsuarioError);
-    }
-
     confirmarBoton.disabled = !esValido;
 
     return esValido;
 }
+
 
 [nombre, apellido, email, nombreUsuario, contrasena, repetirContrasena, tarjetaNumero, tarjetaClave].forEach(campo => {
     campo.addEventListener('input', validarFormulario);
@@ -224,12 +217,12 @@ const guardarDatosEnLocalStorage = () => {
     localStorage.setItem('datosUsuario', JSON.stringify(usuarios));
 };
 
+
 confirmarBoton.addEventListener('click', function(event) {
+    event.preventDefault(); 
     if (validarFormulario()) {
         guardarDatosEnLocalStorage();
-        window.location.href = "home.html";
-    } else {
-        event.preventDefault();
+        window.location.href = "./login.html";
     }
 });
 
@@ -237,6 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
     confirmarBoton.disabled = true;
 });
 
+// Manejo del cambio de método de pago
 cuponPagoRadio.addEventListener('change', function() {
     if (cuponPagoRadio.checked) {
         pagoFacilRadio.disabled = false;
@@ -259,4 +253,3 @@ metodoPagoRadios.forEach(radio => {
         }
     });
 });
-
